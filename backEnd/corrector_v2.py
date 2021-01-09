@@ -69,7 +69,7 @@ def correctExerciseDocx(filename):
                     wrongAnswer += 1
                     correction = paragraph.add_run(solution[solution_key])
                 else:
-                    correction = paragraph.add_run("bien")
+                    correction = paragraph.add_run(" bien")
                 setStyle(correction)
                 question += 1
         if (question == 1):
@@ -156,6 +156,7 @@ if __name__ == "__main__":
     initExplorer()
     login()
     downloadOpenDocs()
+    closeExplorer()
     correct()
     """----------------------------------"""
     """----to pass the solutions to DB----"""

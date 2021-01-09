@@ -37,26 +37,17 @@ def login():
 
     print("Logged correctly")
 
-    exercisesTab()
+    clickExercisesTab()
 
 #Go to the tab "Ejercicios" from the init page
-def exercisesTab():
+def clickExercisesTab():
     DRIVER.find_element_by_class_name("bejercicio").click()
 
-#If exist more pending exercises (not downloaded yet)
-def existPendingExcercises():
-    try:
-        DRIVER.find_element_by_class_name("submit").click()
-    except NoSuchElementException:
-        print("No hay mas ejercicos pendientes para corregir")
-        return False
-    return True
-
 #If exist more open exercises (has been downloaded)
-def existOpenExcercises(row):
+def clickOpenExcercises(exercise):
     try:
         DRIVER.find_element_by_xpath("/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr[" + \
-        str(row) + "]/td[2]/form/input[8]").click()
+        str(exercise) + "]/td[2]/form/input[8]").click()
     except NoSuchElementException:
         print("No hay mas ejercicos abiertos para corregir")
         return False
@@ -64,9 +55,13 @@ def existOpenExcercises(row):
 
 #Click to download exercise in the download path
 def clickDownload():
-    DRIVER.find_element_by_xpath("/html/body/p[1]/a").click()
-    #print("click /html/body/p[1]/a")
-    DRIVER.find_element_by_xpath("/html/body/p[3]/a").click()
+    try:
+        DRIVER.find_element_by_xpath("/html/body/p[1]/a").click()
+        DRIVER.find_element_by_xpath("/html/body/p[3]/a").click()
+    except NoSuchElementException:
+        print("Error al clickar en la descarga")
+        return False
+    return True
 
 #Get all exercises in the web
 def numExercises():
@@ -74,26 +69,17 @@ def numExercises():
     numRows = int(len(tableRows)/2)
     return numRows
 
-#Download pending (not downloaded yet) exercises
-def downloadPendingDocs():
-    while existPendingExcercises():
-        print("Descargando ejercicio pendiente...")
-        clickDownload()
-        exercisesTab()
-    return
-
 #Download open (has been downloaded) exercises
 def downloadOpenDocs():
-    row = 1
-    while existOpenExcercises(row):
-        print("Descargando ejercicio abierto... " + str(row))
+    numEx = numExercises()
+    for exercise in  range(1, numEx + 1):
+        print("Descargando ejercicio abierto... " + str(exercise))
+        clickOpenExcercises(exercise)
         clickDownload()
-        exercisesTab()
-        row += 1
-    return
+        clickExercisesTab()
+    print("Exercises download correctly")
+    print()
 
-#Download all docs avaliables 
-def downloadAllDocs():
-    downloadOpenDocs()
-    downloadPendingDocs()
+def closeExplorer():
+    DRIVER.quit()
 
