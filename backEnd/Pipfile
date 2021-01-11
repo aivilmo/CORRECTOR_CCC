@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+selenium = "*"
+beautifulsoup4 = "*"
+python-docx = "*"
+pywin32 = "*"
+psycopg2 = "*"
+flask = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

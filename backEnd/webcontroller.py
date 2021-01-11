@@ -11,7 +11,7 @@ chrome_options = webdriver.ChromeOptions()
 DOWNLOAD_PATH = {'download.default_directory' : 'C:\\Users\\User\\Desktop\\CEA\\CORRECTOR_CCC'}
 chrome_options.add_experimental_option('prefs', DOWNLOAD_PATH)
 chrome_options.add_argument('headless')
-DRIVER = webdriver.Chrome(chrome_options=chrome_options)
+DRIVER = webdriver.Chrome(executable_path=r"corrector_ccc\driver\chromedriver.exe", chrome_options=chrome_options)
 
 #Init url
 URL = "http://www.cursosadistanciayonline.com/index.php"

@@ -1,8 +1,7 @@
 from flask import Flask
-import sys
-from lib import *
 
 app = Flask(__name__)
+
 
 @app.route('/api', methods={'GET'})
 def api():
@@ -10,6 +9,7 @@ def api():
         'userId': 1,
         'title': "App Corrector"
     }
+
 
 @app.route('/fun', methods={'GET'})
 def fun():
