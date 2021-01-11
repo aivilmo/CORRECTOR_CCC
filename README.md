@@ -1,4 +1,4 @@
-Concetar Flasy y React:
+Conectar Flask y React:
 
 -Flask
 cd Desktop\CEA\CORRECTOR_CCC\backEnd
