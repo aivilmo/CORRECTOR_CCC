@@ -3,7 +3,6 @@
 """-----------------------------"""
 
 from lib import *
-from corrector_v2 import *
 
 
 def connect_db(password):
@@ -11,10 +10,8 @@ def connect_db(password):
     connection.autocommit = True
     return connection
 
-
 def disconnect_db(connection):
     connection.close()
-
 
 # Get solutions from the db for a excercise id
 def get_solutions(exercise_id, password="harryna"):
@@ -25,16 +22,17 @@ def get_solutions(exercise_id, password="harryna"):
     disconnect_db(connection)
     return solution
 
-
 # Write the solutions in db
 def post_solutions(solutions_list, password):
     connection = connect_db(password)
+    print("Inserting solutions in db...")
     query = connection.cursor()
     for solution_file in solutions_list:
-        response, num_questions = correct_exercise_docx(solution_file)
+        response, num_questions = extract_solution_docx(solution_file)
         args = (num_questions, number_exercise(solution_file), json.dumps(response))
         sql = "INSERT INTO public.solutions(num_questions, exercise, solutions_list) VALUES {} ON CONFLICT (exercise) DO NOTHING ".format \
             (args)
         # print(sql)
         query.execute(sql)
+    print("Inserted solutions succesfully")
     disconnect_db(connection)

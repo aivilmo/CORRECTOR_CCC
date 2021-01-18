@@ -1,6 +1,6 @@
-"""----------------------------------"""
-"""---- Main and Corrector Class ----"""
-"""----------------------------------"""
+"""---------------------------"""
+"""----- Corrector Class -----"""
+"""---------------------------"""
 
 from lib import *
 
@@ -34,7 +34,6 @@ def doc2docx(is_solution=False):
 
     Word.Quit()
 
-
 # Extract response from the docx
 def clean_response(response, is_solution):
     responses = re.findall("[a-v]", response)
@@ -42,7 +41,6 @@ def clean_response(response, is_solution):
         return responses
     else:
         return responses[:-4]
-
 
 # Read responses and correct the docx
 def correct_exercise_docx(filename):
@@ -57,7 +55,7 @@ def correct_exercise_docx(filename):
         wrong_answer = 0
         solution = get_solutions(num_exercise)
         if (solution == []):
-            print("No solution in DB to ejercise " + str(num_exercise))
+            print("No solution in DB to exercise " + str(num_exercise))
             return
         solution = solution[0][0]
         solution_keys = list(solution.keys())
@@ -95,12 +93,10 @@ def correct_exercise_docx(filename):
     os.remove(filename)
     return responses, question - 1
 
-
 # Set read letters to correct the docx
 def set_style(paragraph):
     paragraph.bold = True
     paragraph.font.color.rgb = RGBColor(255, 0, 0)
-
 
 # Generate commentary from the docx
 def generate_commentary(grade):
@@ -115,7 +111,6 @@ def generate_commentary(grade):
     elif (grade == 10):
         return "Enhorabuena"
 
-
 # Extract response from the solution docx
 def extract_solution_docx(filename):
     num_exercise = number_exercise(filename)
@@ -126,6 +121,8 @@ def extract_solution_docx(filename):
         for paragraph in document.paragraphs:
             paragraph_text = paragraph.text
             index = paragraph_text.find("La respuesta es")
+            if (index == -1):
+                index = paragraph_text.find("La respuesta correcta es")
             if (index != -1):
                 response = paragraph_text.split(":")
                 responses[question] = clean_response(response[1].lower(), True)
@@ -135,18 +132,16 @@ def extract_solution_docx(filename):
         print(str(e))
     return responses, question - 1
 
-
 # Get the list of the exercises downloaded
 def read_files(isSolution=False):
     solutions_list = []
     path = "..\*."
     if (isSolution):
-        path = "Soluciones\*."
+        path = "..\..\EJERCICIOS_CCC\Soluciones\*."
     for i, doc in enumerate(glob.iglob(path + EXTENSION_LIST[1])):
         in_file = os.path.abspath(doc)
         solutions_list.append(in_file)
     return solutions_list
-
 
 # Correct all exercises in the path
 def correct():
@@ -155,23 +150,3 @@ def correct():
     print("")
     for doc in read_files():
         correct_exercise_docx(doc)
-
-
-# Main
-if __name__ == "__main__":
-    """----------------------------"""
-    """----to correct exercises----"""
-    """----------------------------"""
-    initExplorer()
-    login()
-    downloadOpenDocs()
-    closeExplorer()
-    correct()
-    """----------------------------------"""
-    """----to pass the solutions to DB----"""
-    """----------------------------------"""
-    """
-    doc2docx(True)
-    solutions = readFiles(True)
-    postSolutions(solutions, password="harryna")
-    """
