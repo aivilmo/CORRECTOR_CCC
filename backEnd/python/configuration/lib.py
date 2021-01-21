@@ -26,6 +26,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-from bdconnection import *
-from webcontroller import *
-from corrector import *
+from configuration import bdconnection
+from service import webscrapper
+from service import corrector
