@@ -2,8 +2,9 @@
 """---- Class to connect DB ----"""
 """-----------------------------"""
 
-from lib import *
-
+import psycopg2
+import json
+from .corrector import *
 
 def connect_db(password):
     connection = psycopg2.connect(host="localhost", database="CCC", user="aitana", password=password)

@@ -2,7 +2,13 @@
 """---- Class to access the web, download exercises and push the correction ----"""
 """-----------------------------------------------------------------------------"""
 
-from configuration.lib import *
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
 
 #Configuration of the explorer 
 chrome_options = webdriver.ChromeOptions()

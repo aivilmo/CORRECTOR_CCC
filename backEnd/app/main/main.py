@@ -2,7 +2,9 @@
 """---- Main Class ----"""
 """--------------------"""
 
-from configuration.lib import *
+from service.bdconnection import *
+from service.webscrapper import *
+from service.corrector import *
 
 # Main
 if __name__ == "__main__":

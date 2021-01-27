@@ -2,7 +2,14 @@
 """----- Corrector Class -----"""
 """---------------------------"""
 
-from configuration.lib import *
+
+import docx
+import re
+import win32com.client
+import glob
+import os
+from docx.shared import RGBColor
+from .bdconnection import get_solutions
 
 # Const
 EXTENSION_LIST = ["doc", "docx", "odt", "pdf"]
@@ -113,7 +120,6 @@ def generate_commentary(grade):
 
 # Extract response from the solution docx
 def extract_solution_docx(filename):
-    num_exercise = number_exercise(filename)
     try:
         document = docx.Document(filename)
         responses = dict()
@@ -140,7 +146,9 @@ def read_files(isSolution=False):
         path = "..\..\EJERCICIOS_CCC\Soluciones\*."
     for i, doc in enumerate(glob.iglob(path + EXTENSION_LIST[1])):
         in_file = os.path.abspath(doc)
-        solutions_list.append(in_file)
+        num_exercise = number_exercise(in_file)
+        if (num_exercise not in IGNORED_EXERCISES):
+            solutions_list.append(in_file)
     return solutions_list
 
 # Correct all exercises in the path
