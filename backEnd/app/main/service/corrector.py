@@ -9,7 +9,7 @@ import win32com.client
 import glob
 import os
 from docx.shared import RGBColor
-from .bdconnection import get_solutions
+from service.bdconnection import *
 
 # Const
 EXTENSION_LIST = ["doc", "docx", "odt", "pdf"]
