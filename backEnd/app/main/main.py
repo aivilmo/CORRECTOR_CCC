@@ -2,7 +2,7 @@
 """---- Main Class ----"""
 """--------------------"""
 
-from lib import *
+from configuration.lib import *
 
 # Main
 if __name__ == "__main__":

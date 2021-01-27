@@ -2,7 +2,7 @@
 """----- Corrector Class -----"""
 """---------------------------"""
 
-from lib import *
+from configuration.lib import *
 
 # Const
 EXTENSION_LIST = ["doc", "docx", "odt", "pdf"]

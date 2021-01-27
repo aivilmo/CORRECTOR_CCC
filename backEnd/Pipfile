@@ -11,8 +11,9 @@ python-docx = "*"
 pywin32 = "*"
 psycopg2 = "*"
 flask = "*"
+docx = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+
