@@ -13,6 +13,13 @@ from service.bdconnection import *
 from definitions import BASE_FOLDER
 
 
+class CorrectorManager:
+    
+    #const
+    EXTENSION_LIST = ["doc", "docx", "odt", "pdf"]
+    IGNORED_EXERCISES = [7, 8, 9, 12, 13]  # Nat = 7, 8, 9 | FB = 12, 13
+    INDEX_CALIFICATION = 10
+    INDEX_COMMENTARY = 11
 
 class CorrectorManager:
     
