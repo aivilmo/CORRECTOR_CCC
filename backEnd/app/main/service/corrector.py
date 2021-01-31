@@ -10,6 +10,7 @@ import glob
 import os
 from docx.shared import RGBColor
 from service.bdconnection import *
+from definitions import BASE_FOLDER
 
 # Const
 EXTENSION_LIST = ["doc", "docx", "odt", "pdf"]
@@ -26,8 +27,8 @@ def number_exercise(file_name):
 def doc2docx(is_solution=False):
     Word = win32com.client.Dispatch("Word.Application")
     Word.visible = 0
-    path = "..\*."
-    if (is_solution):
+    path = str(BASE_FOLDER.absolute()) + "\\data\\storage\\exercises\\*."
+    if is_solution:
         path = "Soluciones\*."
     for i, doc in enumerate(glob.iglob(path + EXTENSION_LIST[0])):
         in_file = os.path.abspath(doc)
@@ -41,18 +42,20 @@ def doc2docx(is_solution=False):
 
     Word.Quit()
 
+
 # Extract response from the docx
 def clean_response(response, is_solution):
     responses = re.findall("[a-v]", response)
-    if (not is_solution):
+    if not is_solution:
         return responses
     else:
         return responses[:-4]
 
+
 # Read responses and correct the docx
 def correct_exercise_docx(filename):
     num_exercise = number_exercise(filename)
-    if (num_exercise in IGNORED_EXERCISES):
+    if num_exercise in IGNORED_EXERCISES:
         print("Ignoring " + filename)
         return
     try:
@@ -61,7 +64,7 @@ def correct_exercise_docx(filename):
         question = 1
         wrong_answer = 0
         solution = get_solutions(num_exercise)
-        if (solution == []):
+        if solution == []:
             print("No solution in DB to exercise " + str(num_exercise))
             return
         solution = solution[0][0]
@@ -69,18 +72,18 @@ def correct_exercise_docx(filename):
         for paragraph in document.paragraphs:
             paragraph_text = paragraph.text
             index = paragraph_text.find("La respuesta es")
-            if (index != -1):
+            if index != -1:
                 response = paragraph_text.split(":")
                 responses[question] = clean_response(response[1].lower(), False)
                 solution_key = solution_keys[question - 1]
-                if (set(responses[question]) != set(solution[solution_key])):
+                if set(responses[question]) != set(solution[solution_key]):
                     wrong_answer += 1
                     correction = paragraph.add_run(solution[solution_key])
                 else:
                     correction = paragraph.add_run(" bien")
                 set_style(correction)
                 question += 1
-        if (question == 1):
+        if question == 1:
             print("Error reading responses " + filename)
             return
         question -= 1
@@ -100,23 +103,26 @@ def correct_exercise_docx(filename):
     os.remove(filename)
     return responses, question - 1
 
+
 # Set read letters to correct the docx
 def set_style(paragraph):
     paragraph.bold = True
     paragraph.font.color.rgb = RGBColor(255, 0, 0)
 
+
 # Generate commentary from the docx
 def generate_commentary(grade):
-    if (grade <= 5):
+    if grade <= 5:
         return "Muy flojo"
-    elif (grade > 5 and grade <= 6):
+    elif grade > 5 and grade <= 6:
         return "Bien"
-    elif (grade > 6 and grade <= 8):
+    elif grade > 6 and grade <= 8:
         return "Muy bien"
-    elif (grade > 8):
+    elif grade > 8:
         return "Excelente"
-    elif (grade == 10):
+    elif grade == 10:
         return "Enhorabuena"
+
 
 # Extract response from the solution docx
 def extract_solution_docx(filename):
@@ -127,9 +133,9 @@ def extract_solution_docx(filename):
         for paragraph in document.paragraphs:
             paragraph_text = paragraph.text
             index = paragraph_text.find("La respuesta es")
-            if (index == -1):
+            if index == -1:
                 index = paragraph_text.find("La respuesta correcta es")
-            if (index != -1):
+            if index != -1:
                 response = paragraph_text.split(":")
                 responses[question] = clean_response(response[1].lower(), True)
                 question += 1
@@ -138,18 +144,20 @@ def extract_solution_docx(filename):
         print(str(e))
     return responses, question - 1
 
+
 # Get the list of the exercises downloaded
 def read_files(isSolution=False):
     solutions_list = []
-    path = "..\*."
-    if (isSolution):
+    path = str(BASE_FOLDER.absolute()) + "\\data\\storage\\exercises\\*."
+    if isSolution:
         path = "..\..\EJERCICIOS_CCC\Soluciones\*."
     for i, doc in enumerate(glob.iglob(path + EXTENSION_LIST[1])):
         in_file = os.path.abspath(doc)
         num_exercise = number_exercise(in_file)
-        if (num_exercise not in IGNORED_EXERCISES):
+        if num_exercise not in IGNORED_EXERCISES:
             solutions_list.append(in_file)
     return solutions_list
+
 
 # Correct all exercises in the path
 def correct():

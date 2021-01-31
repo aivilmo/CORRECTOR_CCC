@@ -14,6 +14,10 @@ flask = "*"
 docx = "*"
 
 [dev-packages]
+pylint = "*"
+black = "*"
 
 [requires]
 
+[pipenv]
+allow_prereleases = true
