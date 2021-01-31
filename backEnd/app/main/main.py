@@ -2,8 +2,6 @@
 """---- Main Class ----"""
 """--------------------"""
 
-# from service.bdconnection import *
-# from service.webscrapper import *
 from service.corrector import *
 from service.bdconnection import *
 
