@@ -10,9 +10,9 @@ if __name__ == "__main__":
     """----------------------------"""
     """----to correct exercises----"""
     """----------------------------"""
-    # initExplorer()
-    # login()
-    # downloadOpenDocs()
+    initExplorer()
+    login()
+    downloadOpenDocs()
     correct()
     """----------------------------------"""
     """----to pass the solutions to DB----"""
