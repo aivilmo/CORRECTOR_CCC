@@ -37,10 +37,10 @@ def post_solutions(exercise_data_tuple_list, password):
     query = connection.cursor()
     filename_list = []
     for tuple_item in exercise_data_tuple_list:
-        filename, response, num_questions = tuple_item
+        filename, number_of_exercise, response, num_questions = tuple_item
         filename_list.append(filename)
-        args = (num_questions, number_exercise(solution_file), json.dumps(response))
-         sql = "INSERT INTO public.solutions(num_questions, exercise, filename_list) VALUES {} ON CONFLICT (exercise) DO NOTHING ".format(
+        args = (num_questions, number_of_exercise, json.dumps(response))
+        sql = "INSERT INTO public.solutions(num_questions, exercise, solutions_list) VALUES {} ON CONFLICT (exercise) DO NOTHING ".format(
             args
         )
         # print(sql)
