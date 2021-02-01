@@ -29,9 +29,6 @@ class WebScrapper:
     #Init url
     URL = "http://www.cursosadistanciayonline.com/index.php"
 
-    def __init__(self):
-        pass
-
     #Open the explorer Chrome
     def init_explorer(self):
         self.DRIVER.implicitly_wait(30)

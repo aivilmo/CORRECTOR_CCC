@@ -7,9 +7,6 @@ import json
 
 class DbManager:
 
-    def __init__(self):
-        pass
-
     def connect_db(self, password):
         connection = psycopg2.connect(host="localhost", database="CCC", user="aitana", password=password)
         connection.autocommit = True
