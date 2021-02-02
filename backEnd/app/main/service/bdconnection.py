@@ -5,13 +5,14 @@
 import psycopg2
 import json
 
-class DbManager:
 
+class DbManager:
     def connect_db(self, password):
-        connection = psycopg2.connect(host="localhost", database="CCC", user="aitana", password=password)
+        connection = psycopg2.connect(
+            host="localhost", database="CCC", user="aitana", password=password
+        )
         connection.autocommit = True
         return connection
-
 
     def disconnect_db(self, connection):
         connection.close()
@@ -20,7 +21,9 @@ class DbManager:
     def get_solutions(self, exercise_id, password="harryna"):
         connection = self.connect_db(password)
         query = connection.cursor()
-        query.execute("SELECT solutions_list FROM solutions WHERE exercise=" + str(exercise_id))
+        query.execute(
+            "SELECT solutions_list FROM solutions WHERE exercise=" + str(exercise_id)
+        )
         solution = query.fetchall()
         self.disconnect_db(connection)
         return solution

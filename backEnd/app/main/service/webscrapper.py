@@ -10,31 +10,31 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from definitions import BASE_FOLDER
 
+
 class WebScrapper:
 
-    #Configuration of the explorer 
+    # Configuration of the explorer
     chrome_options = webdriver.ChromeOptions()
     DOWNLOAD_PATH = {
         "download.default_directory": str(BASE_FOLDER.absolute())
         + "\\data\\storage\\exercises\\"
     }
-    chrome_options.add_experimental_option('prefs', DOWNLOAD_PATH)
-    chrome_options.add_argument('headless')
+    chrome_options.add_experimental_option("prefs", DOWNLOAD_PATH)
+    chrome_options.add_argument("headless")
     DRIVER = webdriver.Chrome(
         executable_path=r"data/driver/chromedriver.exe", chrome_options=chrome_options
     )
     TIMEOUT = 3
 
-
-    #Init url
+    # Init url
     URL = "http://www.cursosadistanciayonline.com/index.php"
 
-    #Open the explorer Chrome
+    # Open the explorer Chrome
     def init_explorer(self):
         self.DRIVER.implicitly_wait(30)
         self.DRIVER.maximize_window()
         self.DRIVER.get(self.URL)
-        
+
     def login(self):
         username = self.DRIVER.find_element_by_id("name")
         username.clear()
@@ -51,11 +51,11 @@ class WebScrapper:
 
         self.click_exercises_tab()
 
-    #Go to the tab "Ejercicios" from the init page
+    # Go to the tab "Ejercicios" from the init page
     def click_exercises_tab(self):
         self.DRIVER.find_element_by_class_name("bejercicio").click()
 
-    #Wait object before click
+    # Wait object before click
     def explorer_wait(self, xpath):
         try:
             print("Waiting ...")
@@ -64,10 +64,14 @@ class WebScrapper:
         except TimeoutException:
             print("Timeout object ", xpath)
 
-    #If exist more open exercises (has been downloaded)
+    # If exist more open exercises (has been downloaded)
     def click_open_excercises(self, exercise):
         try:
-            path = "/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr[" + str(exercise) + "]/td[2]/form/input[8]"
+            path = (
+                "/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr["
+                + str(exercise)
+                + "]/td[2]/form/input[8]"
+            )
             self.explorer_wait(path)
             self.DRIVER.find_element_by_xpath(path).click()
         except NoSuchElementException:
@@ -75,11 +79,13 @@ class WebScrapper:
             return False
         return True
 
-    #Click to download exercise in the download path
+    # Click to download exercise in the download path
     def click_download(self):
         try:
             self.explorer_wait(".//a[contains(@href,'cursosccc')]")
-            self.DRIVER.find_element_by_xpath(".//a[contains(@href,'cursosccc')]").click()
+            self.DRIVER.find_element_by_xpath(
+                ".//a[contains(@href,'cursosccc')]"
+            ).click()
             self.explorer_wait("/html/body/p[3]/a")
             self.DRIVER.find_element_by_xpath("/html/body/p[3]/a").click()
         except NoSuchElementException:
@@ -87,17 +93,19 @@ class WebScrapper:
             return False
         return True
 
-    #Get all exercises in the web
+    # Get all exercises in the web
     def num_exercises(self):
-        tableRows = self.DRIVER.find_element_by_xpath("//table[@id='ejertabla']/tbody").text.split("\n")
-        numRows = int(len(tableRows)/2)
+        tableRows = self.DRIVER.find_element_by_xpath(
+            "//table[@id='ejertabla']/tbody"
+        ).text.split("\n")
+        numRows = int(len(tableRows) / 2)
         return numRows
 
-    #Download open (has been downloaded) exercises
+    # Download open (has been downloaded) exercises
     def download_docs(self):
         numEx = self.num_exercises()
         print(numEx, " exercises to download")
-        for exercise in  range(1, numEx + 1):
+        for exercise in range(1, numEx + 1):
             print("Downloading exercise... " + str(exercise))
             self.click_open_excercises(exercise)
             self.click_download()

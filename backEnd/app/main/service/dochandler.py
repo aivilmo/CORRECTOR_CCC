@@ -8,6 +8,7 @@ import glob
 import os
 from definitions import BASE_FOLDER, EXTENSION_LIST, IGNORED_EXERCISES
 
+
 class DocHandler:
 
     PATH_EXERCISES = str(BASE_FOLDER.absolute()) + "\\data\\storage\\exercises\\*."
@@ -37,7 +38,7 @@ class DocHandler:
     # Extract response from the docx
     def clean_response(self, response, is_solution):
         responses = re.findall("[a-v]", response)
-        if (not is_solution):
+        if not is_solution:
             return responses
         else:
             return responses[:-4]

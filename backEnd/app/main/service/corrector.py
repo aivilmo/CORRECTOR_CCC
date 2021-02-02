@@ -12,7 +12,7 @@ from definitions import IGNORED_EXERCISES, INDEX_CALIFICATION, INDEX_COMMENTARY
 
 
 class CorrectorManager:
-    
+
     docHandler = DocHandler()
     dbManager = DbManager()
 
@@ -28,26 +28,28 @@ class CorrectorManager:
             question = 1
             wrong_answer = 0
             solution = self.dbManager.get_solutions(num_exercise)
-            if (solution == []):
+            if solution == []:
                 print("No solution in DB to exercise " + str(num_exercise))
                 return
             solution = solution[0][0]
             solution_keys = list(solution.keys())
             for paragraph in document.paragraphs:
                 paragraph_text = paragraph.text
-                index = paragraph_text.find("La respuesta es") 
-                if (index != -1): 
+                index = paragraph_text.find("La respuesta es")
+                if index != -1:
                     response = paragraph_text.split(":")
-                    responses[question] = self.docHandler.clean_response(response[1].lower(), False)
+                    responses[question] = self.docHandler.clean_response(
+                        response[1].lower(), False
+                    )
                     solution_key = solution_keys[question - 1]
-                    if (set(responses[question]) != set(solution[solution_key])):
+                    if set(responses[question]) != set(solution[solution_key]):
                         wrong_answer += 1
                         correction = paragraph.add_run(solution[solution_key])
                     else:
                         correction = paragraph.add_run(" bien")
                     self.set_style(correction)
                     question += 1
-            if (question == 1):
+            if question == 1:
                 print("Error reading responses " + filename)
                 return
             question -= 1
@@ -75,15 +77,15 @@ class CorrectorManager:
 
     # Generate commentary from the docx
     def generate_commentary(self, grade):
-        if (grade <= 5):
+        if grade <= 5:
             return "Muy flojo"
-        elif (grade > 5 and grade <= 6):
+        elif grade > 5 and grade <= 6:
             return "Bien"
-        elif (grade > 6 and grade <= 8):
+        elif grade > 6 and grade <= 8:
             return "Muy bien"
-        elif (grade > 8):
+        elif grade > 8:
             return "Excelente"
-        elif (grade == 10):
+        elif grade == 10:
             return "Enhorabuena"
 
     # Extract response from the solution docx
@@ -99,7 +101,9 @@ class CorrectorManager:
                     index = paragraph_text.find("La respuesta correcta es")
                 if index != -1:
                     response = paragraph_text.split(":")
-                    responses[question] = self.docHandler.clean_response(response[1].lower(), True)
+                    responses[question] = self.docHandler.clean_response(
+                        response[1].lower(), True
+                    )
                     question += 1
         except Exception as e:
             print("Error in file " + filename)
@@ -109,7 +113,7 @@ class CorrectorManager:
 
     # Correct all exercises in the path
     def correct(self):
-        self.docHandler.doc2docx() 
+        self.docHandler.doc2docx()
         print("Correcting exercises...")
         print("")
         for doc in self.docHandler.read_files():
