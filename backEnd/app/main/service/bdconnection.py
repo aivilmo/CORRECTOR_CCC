@@ -4,9 +4,13 @@
 
 import psycopg2
 import json
+from configuration.logger import Logger
 
 
 class DbManager:
+    def __init__(self):
+        self.logger = Logger()
+
     def connect_db(self, password):
         connection = psycopg2.connect(
             host="localhost", database="CCC", user="aitana", password=password
@@ -31,7 +35,7 @@ class DbManager:
     # Write the solutions in db
     def post_solutions(self, exercise_data_tuple_list, password):
         connection = self.connect_db(password)
-        print("Inserting solutions in db...")
+        self.logger.info("Inserting solutions in db...")
         query = connection.cursor()
         filename_list = []
         for tuple_item in exercise_data_tuple_list:

@@ -9,6 +9,7 @@ from docx.shared import RGBColor
 from service.bdconnection import DbManager
 from service.dochandler import DocHandler
 from definitions import IGNORED_EXERCISES, INDEX_CALIFICATION, INDEX_COMMENTARY
+from configuration.logger import Logger
 
 
 class CorrectorManager:
@@ -16,11 +17,14 @@ class CorrectorManager:
     docHandler = DocHandler()
     dbManager = DbManager()
 
+    def __init__(self):
+        self.logger = Logger()
+
     # Read responses and correct the docx
     def correct_exercise_docx(self, filename):
         num_exercise = self.docHandler.number_exercise(filename)
         if num_exercise in IGNORED_EXERCISES:
-            print("Ignoring " + filename)
+            self.logger.info("Ignoring " + filename)
             return
         try:
             document = docx.Document(filename)
@@ -29,7 +33,9 @@ class CorrectorManager:
             wrong_answer = 0
             solution = self.dbManager.get_solutions(num_exercise)
             if solution == []:
-                print("No solution in DB to exercise " + str(num_exercise))
+                self.logger.warning(
+                    "No solution in DB to exercise " + str(num_exercise)
+                )
                 return
             solution = solution[0][0]
             solution_keys = list(solution.keys())
@@ -50,21 +56,19 @@ class CorrectorManager:
                     self.set_style(correction)
                     question += 1
             if question == 1:
-                print("Error reading responses " + filename)
+                self.logger.error("Error reading responses " + filename)
                 return
             question -= 1
             grade = round(((question - wrong_answer) * 10) / question, 2)
-            print(filename)
-            print("Grade: " + str(grade))
-            print("")
+            self.logger.info(filename)
+            self.logger.info("Grade: " + str(grade))
             grade_str = document.paragraphs[INDEX_CALIFICATION].add_run(str(grade))
             commentary = self.generate_commentary(grade)
             commentary_str = document.paragraphs[INDEX_COMMENTARY].add_run(commentary)
             self.set_style(grade_str)
             self.set_style(commentary_str)
         except Exception as e:
-            print("Error in file " + filename)
-            print(str(e))
+            self.logger.error("Error in file " + filename + "\n" + str(e))
             return
         document.save(filename[:-5] + "_CORREGIDO.docx")
         os.remove(filename)
@@ -106,15 +110,13 @@ class CorrectorManager:
                     )
                     question += 1
         except Exception as e:
-            print("Error in file " + filename)
-            print(str(e))
+            self.logger.error("Error in file " + filename + "\n" + str(e))
             return
         return responses, question - 1
 
     # Correct all exercises in the path
     def correct(self):
         self.docHandler.doc2docx()
-        print("Correcting exercises...")
-        print("")
+        self.logger.info("Correcting exercises...\n")
         for doc in self.docHandler.read_files():
             self.correct_exercise_docx(doc)

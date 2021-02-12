@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from definitions import BASE_FOLDER
+from configuration.logger import Logger
 
 
 class WebScrapper:
@@ -29,6 +30,9 @@ class WebScrapper:
     # Init url
     URL = "http://www.cursosadistanciayonline.com/index.php"
 
+    def __init__(self):
+        self.logger = Logger()
+
     # Open the explorer Chrome
     def init_explorer(self):
         self.DRIVER.implicitly_wait(30)
@@ -47,7 +51,7 @@ class WebScrapper:
         self.DRIVER.find_element_by_name("acceder").click()
         self.DRIVER.find_element_by_xpath("//a[@title='CCC']").click()
 
-        print("Logged correctly")
+        self.logger.info("Logged correctly")
 
         self.click_exercises_tab()
 
@@ -58,11 +62,11 @@ class WebScrapper:
     # Wait object before click
     def explorer_wait(self, xpath):
         try:
-            print("Waiting ...")
+            self.logger.info("Waiting ...")
             element_present = EC.presence_of_element_located((By.XPATH, xpath))
             WebDriverWait(self.DRIVER, self.TIMEOUT).until(element_present)
         except TimeoutException:
-            print("Timeout object ", xpath)
+            self.logger.error("Timeout object ", xpath)
 
     # If exist more open exercises (has been downloaded)
     def click_open_excercises(self, exercise):
@@ -75,7 +79,7 @@ class WebScrapper:
             self.explorer_wait(path)
             self.DRIVER.find_element_by_xpath(path).click()
         except NoSuchElementException:
-            print("No more exercises to correct")
+            self.logger.error("No more exercises to correct")
             return False
         return True
 
@@ -89,7 +93,7 @@ class WebScrapper:
             self.explorer_wait("/html/body/p[3]/a")
             self.DRIVER.find_element_by_xpath("/html/body/p[3]/a").click()
         except NoSuchElementException:
-            print("Error cliking in download")
+            self.logger.error("Error cliking in download")
             return False
         return True
 
@@ -104,14 +108,13 @@ class WebScrapper:
     # Download open (has been downloaded) exercises
     def download_docs(self):
         numEx = self.num_exercises()
-        print(numEx, " exercises to download")
+        self.logger.info(str(numEx) + " exercises to download")
         for exercise in range(1, numEx + 1):
-            print("Downloading exercise... " + str(exercise))
+            self.logger.info("Downloading exercise... " + str(exercise))
             self.click_open_excercises(exercise)
             self.click_download()
             self.click_exercises_tab()
-        print("Exercises download correctly")
-        print()
+        self.logger.info("Exercises download correctly")
         self.close_explorer()
 
     def close_explorer(self):
