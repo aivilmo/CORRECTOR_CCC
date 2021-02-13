@@ -10,16 +10,16 @@ from configuration.database_config import DatabaseConfiguration
 
 class DbManager:
     def __init__(self):
-        self.db_conf = DatabaseConfiguration()
-        self.config = self.db_conf.db_config
-        self.logger = Logger()
+        self.config = DatabaseConfiguration.getInstance().db_config
+        self.logger = Logger.getInstance()
 
-    def connect_db(self, password):
+    def connect_db(self):
+        print(self.config)
         connection = psycopg2.connect(
-            host=config.host,
-            database=config.name,
-            user=config.user,
-            password=config.password,
+            host=self.config.host,
+            database=self.config.name,
+            user=self.config.user,
+            password=self.config.password,
         )
         connection.autocommit = True
         return connection
@@ -28,8 +28,8 @@ class DbManager:
         connection.close()
 
     # Get solutions from the db for a excercise id
-    def get_solutions(self, exercise_id, password="harryna"):
-        connection = self.connect_db(password)
+    def get_solutions(self, exercise_id):
+        connection = self.connect_db()
         query = connection.cursor()
         query.execute(
             "SELECT solutions_list FROM solutions WHERE exercise=" + str(exercise_id)
@@ -39,8 +39,8 @@ class DbManager:
         return solution
 
     # Write the solutions in db
-    def post_solutions(self, exercise_data_tuple_list, password):
-        connection = self.connect_db(password)
+    def post_solutions(self, exercise_data_tuple_list):
+        connection = self.connect_db()
         self.logger.info("Inserting solutions in db...")
         query = connection.cursor()
         filename_list = []

@@ -18,7 +18,7 @@ class CorrectorManager:
     dbManager = DbManager()
 
     def __init__(self):
-        self.logger = Logger()
+        self.logger = Logger.getInstance()
 
     # Read responses and correct the docx
     def correct_exercise_docx(self, filename):

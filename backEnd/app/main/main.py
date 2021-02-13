@@ -10,8 +10,8 @@ from service.dochandler import DocHandler
 
 
 class MainClass:
-    def __init__():
-        self.configuration = AppConfig()
+    def __init__(self):
+        self.configuration = AppConfig.getInstance().init_app_config()
         self.correctorManager = CorrectorManager()
         self.webScrapper = WebScrapper()
         self.dbManager = DbManager()
@@ -31,7 +31,7 @@ class MainClass:
         self.docHandler.doc2docx(True)
         solutions = self.docHandler.read_files(True)
         tuples_list = self.correctorManager.get_data_to_save(solutions)
-        self.dbManager.post_solutions(tuples_list, password="harryna")
+        self.dbManager.post_solutions(tuples_list)
 
 
 # Main

@@ -16,7 +16,7 @@ class DocHandler:
     PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + "\\data\\storage\\solutions\\*."
 
     def __init__(self):
-        self.logger = Logger()
+        self.logger = Logger.getInstance()
 
     def number_exercise(self, file_name):
         return int(file_name.split("_Ejercicio_")[1].split("_")[0])

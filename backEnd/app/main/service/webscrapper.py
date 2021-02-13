@@ -33,7 +33,7 @@ class WebScrapper:
     URL = "http://www.cursosadistanciayonline.com/index.php"
 
     def __init__(self):
-        self.logger = Logger()
+        self.logger = Logger.getInstance()
         self.json_dict = self.get_selectors()
         self.dict_converter = DictConverter(self.json_dict)
         self.selectors = self.dict_converter.convert(self.json_dict)
@@ -73,7 +73,7 @@ class WebScrapper:
             element_present = EC.presence_of_element_located((By.XPATH, xpath))
             WebDriverWait(self.DRIVER, self.TIMEOUT).until(element_present)
         except TimeoutException:
-            self.logger.error("Timeout object ", xpath)
+            self.logger.error("Timeout object " + str(xpath))
 
     # If exist more open exercises (has been downloaded)
     def click_open_excercises(self, exercise):

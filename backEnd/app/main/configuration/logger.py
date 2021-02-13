@@ -5,20 +5,26 @@ class Logger:
 
     __instance = None
 
-    def __init__(self):
-        logging.basicConfig(
-            level=logging.DEBUG,
-            filename="data/logger/app.log",
-            filemode="w",
-            format="[%(levelname)s] %(name)s: %(message)s",
-        )
-        self.logger = logging.getLogger()
-
-    # Singleton method
-    def __new__(cls):
-        if Logger.__instance is None:
-            Logger.__instance = object.__new__(cls)
+    @staticmethod
+    def getInstance():
+        """ Static access method. """
+        if Logger.__instance == None:
+            Logger()
         return Logger.__instance
+
+    def __init__(self):
+        """ Virtually private constructor. """
+        if Logger.__instance != None:
+            raise Exception("This class is a singleton!")
+        else:
+            logging.basicConfig(
+                level=logging.DEBUG,
+                filename="data/logger/app.log",
+                filemode="w",
+                format="[%(levelname)s] %(name)s: %(message)s",
+            )
+            self.logger = logging.getLogger()
+            Logger.__instance = self
 
     def debug(self, message):
         print("[DEBUG]: " + message)
