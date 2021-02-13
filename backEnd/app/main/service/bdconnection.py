@@ -5,15 +5,21 @@
 import psycopg2
 import json
 from configuration.logger import Logger
+from configuration.database_config import DatabaseConfiguration
 
 
 class DbManager:
     def __init__(self):
+        self.db_conf = DatabaseConfiguration()
+        self.config = self.db_conf.db_config
         self.logger = Logger()
 
     def connect_db(self, password):
         connection = psycopg2.connect(
-            host="localhost", database="CCC", user="aitana", password=password
+            host=config.host,
+            database=config.name,
+            user=config.user,
+            password=config.password,
         )
         connection.autocommit = True
         return connection
@@ -45,7 +51,7 @@ class DbManager:
             sql = "INSERT INTO public.solutions(num_questions, exercise, solutions_list) VALUES {} ON CONFLICT (exercise) DO NOTHING ".format(
                 args
             )
-            # print(sql)
+            self.logger.debug(sql)
             query.execute(sql)
-        print("Inserted solutions succesfully")
+        self.logger.info("Inserted solutions succesfully")
         self.disconnect_db(connection)

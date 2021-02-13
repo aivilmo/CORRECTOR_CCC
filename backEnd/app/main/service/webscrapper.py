@@ -10,6 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from definitions import BASE_FOLDER
 from configuration.logger import Logger
+from utils.dict_converter import DictConverter
+import json
 
 
 class WebScrapper:
@@ -32,6 +34,9 @@ class WebScrapper:
 
     def __init__(self):
         self.logger = Logger()
+        self.json_dict = self.get_selectors()
+        self.dict_converter = DictConverter(self.json_dict)
+        self.selectors = self.dict_converter.convert(self.json_dict)
 
     # Open the explorer Chrome
     def init_explorer(self):
@@ -40,16 +45,16 @@ class WebScrapper:
         self.DRIVER.get(self.URL)
 
     def login(self):
-        username = self.DRIVER.find_element_by_id("name")
+        username = self.DRIVER.find_element_by_id(self.selectors.id.name)
         username.clear()
         username.send_keys("Aitana")
 
-        password = self.DRIVER.find_element_by_name("password")
+        password = self.DRIVER.find_element_by_name(self.selectors.input.password)
         password.clear()
         password.send_keys("410")
 
-        self.DRIVER.find_element_by_name("acceder").click()
-        self.DRIVER.find_element_by_xpath("//a[@title='CCC']").click()
+        self.DRIVER.find_element_by_name(self.selectors.input.login_btn).click()
+        self.DRIVER.find_element_by_xpath(self.selectors.xpath.link_ccc).click()
 
         self.logger.info("Logged correctly")
 
@@ -57,7 +62,9 @@ class WebScrapper:
 
     # Go to the tab "Ejercicios" from the init page
     def click_exercises_tab(self):
-        self.DRIVER.find_element_by_class_name("bejercicio").click()
+        self.DRIVER.find_element_by_class_name(
+            self.selectors.classes.exercise_tab
+        ).click()
 
     # Wait object before click
     def explorer_wait(self, xpath):
@@ -86,12 +93,12 @@ class WebScrapper:
     # Click to download exercise in the download path
     def click_download(self):
         try:
-            self.explorer_wait(".//a[contains(@href,'cursosccc')]")
+            self.explorer_wait(self.selectors.xpath.link_ccc_courses)
             self.DRIVER.find_element_by_xpath(
-                ".//a[contains(@href,'cursosccc')]"
+                self.selectors.xpath.link_ccc_courses
             ).click()
-            self.explorer_wait("/html/body/p[3]/a")
-            self.DRIVER.find_element_by_xpath("/html/body/p[3]/a").click()
+            self.explorer_wait(self.selectors.xpath.link)
+            self.DRIVER.find_element_by_xpath(self.selectors.xpath.link).click()
         except NoSuchElementException:
             self.logger.error("Error cliking in download")
             return False
@@ -100,7 +107,7 @@ class WebScrapper:
     # Get all exercises in the web
     def num_exercises(self):
         tableRows = self.DRIVER.find_element_by_xpath(
-            "//table[@id='ejertabla']/tbody"
+            self.selectors.xpath.exercise_table
         ).text.split("\n")
         numRows = int(len(tableRows) / 2)
         return numRows
@@ -119,3 +126,8 @@ class WebScrapper:
 
     def close_explorer(self):
         self.DRIVER.quit()
+
+    def get_selectors(self):
+        with open("data/selectors.json") as json_file:
+            data = json.load(json_file)
+        return data

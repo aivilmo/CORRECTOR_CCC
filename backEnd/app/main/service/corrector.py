@@ -31,13 +31,13 @@ class CorrectorManager:
             responses = dict()
             question = 1
             wrong_answer = 0
-            solution = self.dbManager.get_solutions(num_exercise)
-            if solution == []:
+            solution_dict = self.dbManager.get_solutions(num_exercise)
+            if solution_dict == []:
                 self.logger.warning(
                     "No solution in DB to exercise " + str(num_exercise)
                 )
                 return
-            solution = solution[0][0]
+            solution = solution_dict[0][0]
             solution_keys = list(solution.keys())
             for paragraph in document.paragraphs:
                 paragraph_text = paragraph.text
@@ -120,3 +120,13 @@ class CorrectorManager:
         self.logger.info("Correcting exercises...\n")
         for doc in self.docHandler.read_files():
             self.correct_exercise_docx(doc)
+
+    def get_data_to_save(self, solutions):
+        tuples_list = []
+        for solution_file in solutions:
+            number_of_exercise = self.docHandler.number_exercise(solution_file)
+            response, num_questions = self.extract_solution_docx(solution_file)
+            tuples_list.append(
+                (solution_file, number_of_exercise, response, num_questions)
+            )
+        return tuples_list
