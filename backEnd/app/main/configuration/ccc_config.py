@@ -1,4 +1,5 @@
 from utils.dict_converter import DictConverter
+from exception.singleton_exception import SingletonException
 
 
 class CCCConfiguration:
@@ -17,7 +18,7 @@ class CCCConfiguration:
     def __init__(self):
         """ Virtually private constructor. """
         if CCCConfiguration.__instance != None:
-            raise Exception("This class is a singleton!")
+            raise SingletonException
         else:
             CCCConfiguration.__instance = self
 

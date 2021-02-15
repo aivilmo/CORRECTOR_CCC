@@ -2,6 +2,7 @@ import yaml
 from configuration.ccc_config import CCCConfiguration
 from configuration.path_config import PathConfiguration
 from configuration.database_config import DatabaseConfiguration
+from exception.singleton_exception import SingletonException
 
 
 class AppConfig:
@@ -21,13 +22,14 @@ class AppConfig:
     def __init__(self):
         """ Virtually private constructor. """
         if AppConfig.__instance != None:
-            raise Exception("This class is a singleton!")
+            raise SingletonException
         else:
             self.__database = DatabaseConfiguration.getInstance()
             self.__path = PathConfiguration.getInstance()
             self.__ccc = CCCConfiguration.getInstance()
             AppConfig.__instance = self
 
+    # Decorator
     def load_configuration(app_conf_call):
         def add_init_config(self):
             AppConfig.getInstance().init_app_config()

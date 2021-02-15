@@ -1,4 +1,5 @@
 from utils.dict_converter import DictConverter
+from exception.singleton_exception import SingletonException
 
 
 class PathConfiguration:
@@ -17,7 +18,7 @@ class PathConfiguration:
     def __init__(self):
         """ Virtually private constructor. """
         if PathConfiguration.__instance != None:
-            raise Exception("This class is a singleton!")
+            raise SingletonException
         else:
             PathConfiguration.__instance = self
 
