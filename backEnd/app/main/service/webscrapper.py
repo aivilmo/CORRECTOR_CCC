@@ -33,7 +33,7 @@ class WebScrapper:
             "download.default_directory": str(BASE_FOLDER.absolute()) + self.config_path.docx.exercises
         }
         self.chrome_options.add_experimental_option("prefs", self.DOWNLOAD_PATH)
-        # self.chrome_options.add_argument("headless")
+        self.chrome_options.add_argument("headless")
         self.DRIVER = webdriver.Chrome(
             executable_path=self.config_path.chrome_driver, chrome_options=self.chrome_options
         )
