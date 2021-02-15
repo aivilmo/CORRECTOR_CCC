@@ -1,0 +1,97 @@
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"prefs": {"download.default_directory": "C:\\Users\\hp\\Desktop\\CORRECTOR_CCC\\backEnd\\data\\storage\\exercises\\*."}, "extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"prefs": {"download.default_directory": "C:\\Users\\hp\\Desktop\\CORRECTOR_CCC\\backEnd\\data\\storage\\exercises\\*."}, "extensions": [], "args": []}}}
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:60095
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session HTTP/1.1" 200 716
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/timeouts {"implicit": 30000}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/timeouts HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/window/maximize {}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/window/maximize HTTP/1.1" 200 52
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/url {"url": "http://www.cursosadistanciayonline.com/index.php"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/url HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "css selector", "value": "[id=\"name\"]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/5c3a40e7-014d-4920-a302-3de23981f179/clear {"id": "5c3a40e7-014d-4920-a302-3de23981f179"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/5c3a40e7-014d-4920-a302-3de23981f179/clear HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/5c3a40e7-014d-4920-a302-3de23981f179/value {"text": "Aitana", "value": ["A", "i", "t", "a", "n", "a"], "id": "5c3a40e7-014d-4920-a302-3de23981f179"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/5c3a40e7-014d-4920-a302-3de23981f179/value HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "css selector", "value": "[name=\"password\"]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/782c1a27-5610-4520-a057-11ce97f5b1c3/clear {"id": "782c1a27-5610-4520-a057-11ce97f5b1c3"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/782c1a27-5610-4520-a057-11ce97f5b1c3/clear HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/782c1a27-5610-4520-a057-11ce97f5b1c3/value {"text": "410", "value": ["4", "1", "0"], "id": "782c1a27-5610-4520-a057-11ce97f5b1c3"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/782c1a27-5610-4520-a057-11ce97f5b1c3/value HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "css selector", "value": "[name=\"acceder\"]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/da607942-4cdc-414f-a742-25cdbf394105/click {"id": "da607942-4cdc-414f-a742-25cdbf394105"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/da607942-4cdc-414f-a742-25cdbf394105/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": "//a[@title='CCC']"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/5fd0a989-47cf-4163-915e-2a115c63143b/click {"id": "5fd0a989-47cf-4163-915e-2a115c63143b"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/5fd0a989-47cf-4163-915e-2a115c63143b/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: Logged correctly
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "css selector", "value": ".bejercicio"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/fdb70622-17ea-4c16-9997-8acf6fd5f521/click {"id": "fdb70622-17ea-4c16-9997-8acf6fd5f521"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/fdb70622-17ea-4c16-9997-8acf6fd5f521/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": "//table[@id='ejertabla']/tbody"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: GET http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/22240cc2-fd7e-47f4-8ff8-a4b322bb9b66/text {"id": "22240cc2-fd7e-47f4-8ff8-a4b322bb9b66"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "GET /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/22240cc2-fd7e-47f4-8ff8-a4b322bb9b66/text HTTP/1.1" 200 101
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: 2 exercises to download
+[INFO] root: Downloading exercise... 1
+[INFO] root: Waiting ...
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": "/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr[1]/td[2]/form/input[8]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": "/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr[1]/td[2]/form/input[8]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/0d6df5b7-3352-42b3-b304-53d4d54e5c73/click {"id": "0d6df5b7-3352-42b3-b304-53d4d54e5c73"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/0d6df5b7-3352-42b3-b304-53d4d54e5c73/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: Waiting ...
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": ".//a[contains(@href,'cursosccc')]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": ".//a[contains(@href,'cursosccc')]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/b957ed5f-9fa7-4b3e-a429-94845433e86a/click {"id": "b957ed5f-9fa7-4b3e-a429-94845433e86a"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/b957ed5f-9fa7-4b3e-a429-94845433e86a/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: Waiting ...
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": "/html/body/p[3]/a"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": "/html/body/p[3]/a"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/cbaa5b4e-e0dc-4c76-bd21-169f49931181/click {"id": "cbaa5b4e-e0dc-4c76-bd21-169f49931181"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/cbaa5b4e-e0dc-4c76-bd21-169f49931181/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "css selector", "value": ".bejercicio"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element/d16ae41c-f18a-4fb4-a4ef-03d5a26a3e26/click {"id": "d16ae41c-f18a-4fb4-a4ef-03d5a26a3e26"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:60095 "POST /session/14abdf975c592e2f81b06d1b2d7dcfaf/element/d16ae41c-f18a-4fb4-a4ef-03d5a26a3e26/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: Downloading exercise... 2
+[INFO] root: Waiting ...
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:60095/session/14abdf975c592e2f81b06d1b2d7dcfaf/element {"using": "xpath", "value": "/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr[2]/td[2]/form/input[8]"}

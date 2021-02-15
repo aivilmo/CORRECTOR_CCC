@@ -17,8 +17,8 @@ class DocHandler:
     def __init__(self):
         self.logger = Logger.getInstance()
         self.config_path = PathConfiguration.getInstance().routes
-        self.PATH_EXERCISES = str(BASE_FOLDER.absolute()) + self.config_path.docx.exercises
-        self.PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + self.config_path.docx.solutions
+        self.PATH_EXERCISES = str(BASE_FOLDER.absolute()) + self.config_path.docx.exercises + "*."
+        self.PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + self.config_path.docx.solutions + "*."
 
     def number_exercise(self, file_name):
         return int(file_name.split("_Ejercicio_")[1].split("_")[0])
