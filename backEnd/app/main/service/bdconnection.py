@@ -10,8 +10,8 @@ from configuration.logger import Logger
 
 
 class DbManager:
+    @AppConfig.load_configuration
     def __init__(self):
-        AppConfig.getInstance().init_app_config()
         self.config = DatabaseConfiguration.getInstance().db_config
         self.logger = Logger.getInstance()
 
@@ -32,9 +32,7 @@ class DbManager:
     def get_solutions(self, exercise_id):
         connection = self.connect_db()
         query = connection.cursor()
-        query.execute(
-            "SELECT solutions_list FROM solutions WHERE exercise=" + str(exercise_id)
-        )
+        query.execute("SELECT solutions_list FROM solutions WHERE exercise=" + str(exercise_id))
         solution = query.fetchall()
         self.disconnect_db(connection)
         return solution

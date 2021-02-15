@@ -1,12 +1,14 @@
 ccc:
+  url: "http://www.cursosadistanciayonline.com/index.php"
   username: Aitana
   password: 410
 path:
+  chrome_driver: "data/driver/chromedriver.exe"
   json:
     selector: "data/selectors.json"
   docx:
     exercises: "\\data\\storage\\exercises\\*."
-    solution: "\\data\\storage\\solutions\\*."
+    solutions: "\\data\\storage\\solutions\\*."
 database:
   host: localhost
   name: CCC

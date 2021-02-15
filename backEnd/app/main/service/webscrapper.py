@@ -18,25 +18,8 @@ import json
 
 
 class WebScrapper:
-
-    # Configuration of the explorer
-    chrome_options = webdriver.ChromeOptions()
-    DOWNLOAD_PATH = {
-        "download.default_directory": str(BASE_FOLDER.absolute())
-        + "\\data\\storage\\exercises\\"
-    }
-    chrome_options.add_experimental_option("prefs", DOWNLOAD_PATH)
-    chrome_options.add_argument("headless")
-    DRIVER = webdriver.Chrome(
-        executable_path=r"data/driver/chromedriver.exe", chrome_options=chrome_options
-    )
-    TIMEOUT = 3
-
-    # Init url
-    URL = "http://www.cursosadistanciayonline.com/index.php"
-
+    @AppConfig.load_configuration
     def __init__(self):
-        AppConfig.getInstance().init_app_config()
         self.config_ccc = CCCConfiguration.getInstance().ccc_config
         self.config_path = PathConfiguration.getInstance().routes
         self.logger = Logger.getInstance()
@@ -44,11 +27,23 @@ class WebScrapper:
         self.dict_converter = DictConverter(self.json_dict)
         self.selectors = self.dict_converter.convert(self.json_dict)
 
+        # Configuration of the explorer
+        self.chrome_options = webdriver.ChromeOptions()
+        self.DOWNLOAD_PATH = {
+            "download.default_directory": str(BASE_FOLDER.absolute()) + self.config_path.docx.exercises
+        }
+        self.chrome_options.add_experimental_option("prefs", self.DOWNLOAD_PATH)
+        self.chrome_options.add_argument("headless")
+        self.DRIVER = webdriver.Chrome(
+            executable_path=self.config_path.chrome_driver, chrome_options=self.chrome_options
+        )
+        self.TIMEOUT = 3
+
     # Open the explorer Chrome
     def init_explorer(self):
         self.DRIVER.implicitly_wait(30)
         self.DRIVER.maximize_window()
-        self.DRIVER.get(self.URL)
+        self.DRIVER.get(self.config_ccc.url)
 
     def login(self):
         username = self.DRIVER.find_element_by_id(self.selectors.id.name)
@@ -68,9 +63,7 @@ class WebScrapper:
 
     # Go to the tab "Ejercicios" from the init page
     def click_exercises_tab(self):
-        self.DRIVER.find_element_by_class_name(
-            self.selectors.classes.exercise_tab
-        ).click()
+        self.DRIVER.find_element_by_class_name(self.selectors.classes.exercise_tab).click()
 
     # Wait object before click
     def explorer_wait(self, xpath):
@@ -84,11 +77,7 @@ class WebScrapper:
     # If exist more open exercises (has been downloaded)
     def click_open_excercises(self, exercise):
         try:
-            path = (
-                "/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr["
-                + str(exercise)
-                + "]/td[2]/form/input[8]"
-            )
+            path = "/html/body/div[3]/div/div[2]/div/div[1]/table/tbody/tr[" + str(exercise) + "]/td[2]/form/input[8]"
             self.explorer_wait(path)
             self.DRIVER.find_element_by_xpath(path).click()
         except NoSuchElementException:
@@ -100,9 +89,7 @@ class WebScrapper:
     def click_download(self):
         try:
             self.explorer_wait(self.selectors.xpath.link_ccc_courses)
-            self.DRIVER.find_element_by_xpath(
-                self.selectors.xpath.link_ccc_courses
-            ).click()
+            self.DRIVER.find_element_by_xpath(self.selectors.xpath.link_ccc_courses).click()
             self.explorer_wait(self.selectors.xpath.link)
             self.DRIVER.find_element_by_xpath(self.selectors.xpath.link).click()
         except NoSuchElementException:
@@ -112,9 +99,7 @@ class WebScrapper:
 
     # Get all exercises in the web
     def num_exercises(self):
-        tableRows = self.DRIVER.find_element_by_xpath(
-            self.selectors.xpath.exercise_table
-        ).text.split("\n")
+        tableRows = self.DRIVER.find_element_by_xpath(self.selectors.xpath.exercise_table).text.split("\n")
         numRows = int(len(tableRows) / 2)
         return numRows
 

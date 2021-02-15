@@ -28,6 +28,13 @@ class AppConfig:
             self.__ccc = CCCConfiguration.getInstance()
             AppConfig.__instance = self
 
+    def load_configuration(app_conf_call):
+        def add_init_config(self):
+            AppConfig.getInstance().init_app_config()
+            app_conf_call(self)
+
+        return add_init_config
+
     def read_configuration_file(self):
         with open(self.FILE_URL) as file:
             document = yaml.load(file, Loader=yaml.FullLoader)

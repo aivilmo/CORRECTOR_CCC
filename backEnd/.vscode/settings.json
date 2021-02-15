@@ -1,4 +1,8 @@
 {
     "python.formatting.provider": "black",
-    "deepscan.ignoreConfirmWarning": true
+    "deepscan.ignoreConfirmWarning": true,
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ]
 }

@@ -6,17 +6,19 @@ import re
 import win32com.client
 import glob
 import os
+from configuration.app_config import AppConfig
+from configuration.path_config import PathConfiguration
 from definitions import BASE_FOLDER, EXTENSION_LIST, IGNORED_EXERCISES
 from configuration.logger import Logger
 
 
 class DocHandler:
-
-    PATH_EXERCISES = str(BASE_FOLDER.absolute()) + "\\data\\storage\\exercises\\*."
-    PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + "\\data\\storage\\solutions\\*."
-
+    @AppConfig.load_configuration
     def __init__(self):
         self.logger = Logger.getInstance()
+        self.config_path = PathConfiguration.getInstance().routes
+        self.PATH_EXERCISES = str(BASE_FOLDER.absolute()) + self.config_path.docx.exercises
+        self.PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + self.config_path.docx.solutions
 
     def number_exercise(self, file_name):
         return int(file_name.split("_Ejercicio_")[1].split("_")[0])

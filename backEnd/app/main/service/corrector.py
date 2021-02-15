@@ -33,9 +33,7 @@ class CorrectorManager:
             wrong_answer = 0
             solution_dict = self.dbManager.get_solutions(num_exercise)
             if solution_dict == []:
-                self.logger.warning(
-                    "No solution in DB to exercise " + str(num_exercise)
-                )
+                self.logger.warning("No solution in DB to exercise " + str(num_exercise))
                 return
             solution = solution_dict[0][0]
             solution_keys = list(solution.keys())
@@ -44,9 +42,7 @@ class CorrectorManager:
                 index = paragraph_text.find("La respuesta es")
                 if index != -1:
                     response = paragraph_text.split(":")
-                    responses[question] = self.docHandler.clean_response(
-                        response[1].lower(), False
-                    )
+                    responses[question] = self.docHandler.clean_response(response[1].lower(), False)
                     solution_key = solution_keys[question - 1]
                     if set(responses[question]) != set(solution[solution_key]):
                         wrong_answer += 1
@@ -105,9 +101,7 @@ class CorrectorManager:
                     index = paragraph_text.find("La respuesta correcta es")
                 if index != -1:
                     response = paragraph_text.split(":")
-                    responses[question] = self.docHandler.clean_response(
-                        response[1].lower(), True
-                    )
+                    responses[question] = self.docHandler.clean_response(response[1].lower(), True)
                     question += 1
         except Exception as e:
             self.logger.error("Error in file " + filename + "\n" + str(e))
@@ -126,7 +120,5 @@ class CorrectorManager:
         for solution_file in solutions:
             number_of_exercise = self.docHandler.number_exercise(solution_file)
             response, num_questions = self.extract_solution_docx(solution_file)
-            tuples_list.append(
-                (solution_file, number_of_exercise, response, num_questions)
-            )
+            tuples_list.append((solution_file, number_of_exercise, response, num_questions))
         return tuples_list
