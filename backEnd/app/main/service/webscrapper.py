@@ -10,6 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from definitions import BASE_FOLDER
 from configuration.logger import Logger
+import time
 
 
 class WebScrapper:
@@ -83,8 +84,9 @@ class WebScrapper:
             self.logger.info("Waiting ...")
             element_present = EC.presence_of_element_located((By.XPATH, xpath))
             WebDriverWait(self.DRIVER, self.TIMEOUT).until(element_present)
+            time.sleep(1)
         except TimeoutException:
-            self.logger.error("Timeout object ", xpath)
+            self.logger.error("Timeout object " + xpath)
 
     # If exist more open exercises (has been downloaded)
     def click_open_excercises(self, exercise):
