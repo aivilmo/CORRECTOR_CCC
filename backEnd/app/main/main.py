@@ -11,7 +11,6 @@ from service.dochandler import DocHandler
 
 class MainClass:
     def __init__(self):
-        self.configuration = AppConfig.getInstance().init_app_config()
         self.correctorManager = CorrectorManager()
         self.webScrapper = WebScrapper()
         self.dbManager = DbManager()

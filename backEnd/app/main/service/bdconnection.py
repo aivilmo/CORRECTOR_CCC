@@ -4,17 +4,18 @@
 
 import psycopg2
 import json
-from configuration.logger import Logger
+from configuration.app_config import AppConfig
 from configuration.database_config import DatabaseConfiguration
+from configuration.logger import Logger
 
 
 class DbManager:
     def __init__(self):
+        AppConfig.getInstance().init_app_config()
         self.config = DatabaseConfiguration.getInstance().db_config
         self.logger = Logger.getInstance()
 
     def connect_db(self):
-        print(self.config)
         connection = psycopg2.connect(
             host=self.config.host,
             database=self.config.name,

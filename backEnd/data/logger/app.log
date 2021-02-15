@@ -1,0 +1,111 @@
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/timeouts {"implicit": 30000}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/timeouts HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/window/maximize {}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/window/maximize HTTP/1.1" 200 48
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/url {"url": "http://www.cursosadistanciayonline.com/index.php"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/url HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element {"using": "css selector", "value": "[id=\"name\"]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/834414f3-4d96-4226-8ce7-45db82a2d6ad/clear {"id": "834414f3-4d96-4226-8ce7-45db82a2d6ad"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element/834414f3-4d96-4226-8ce7-45db82a2d6ad/clear HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/834414f3-4d96-4226-8ce7-45db82a2d6ad/value {"text": "Aitana", "value": ["A", "i", "t", "a", "n", "a"], "id": "834414f3-4d96-4226-8ce7-45db82a2d6ad"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element/834414f3-4d96-4226-8ce7-45db82a2d6ad/value HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element {"using": "css selector", "value": "[name=\"password\"]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/76c43576-c30a-41d2-816e-cff48a642fec/clear {"id": "76c43576-c30a-41d2-816e-cff48a642fec"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element/76c43576-c30a-41d2-816e-cff48a642fec/clear HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/76c43576-c30a-41d2-816e-cff48a642fec/value {"text": "410", "value": ["4", "1", "0"], "id": "76c43576-c30a-41d2-816e-cff48a642fec"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element/76c43576-c30a-41d2-816e-cff48a642fec/value HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element {"using": "css selector", "value": "[name=\"acceder\"]"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/257ea41b-61d2-4ca3-a9b9-3dd180f3ffb8/click {"id": "257ea41b-61d2-4ca3-a9b9-3dd180f3ffb8"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element/257ea41b-61d2-4ca3-a9b9-3dd180f3ffb8/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element {"using": "xpath", "value": "//a[@title='CCC']"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/1815ae7b-b04e-40c0-8734-effbaa045201/click {"id": "1815ae7b-b04e-40c0-8734-effbaa045201"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element/1815ae7b-b04e-40c0-8734-effbaa045201/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: Logged correctly
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element {"using": "css selector", "value": ".bejercicio"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/a7e1fbff-0aac-41c6-9f25-c59c155f2d93/click {"id": "a7e1fbff-0aac-41c6-9f25-c59c155f2d93"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element/a7e1fbff-0aac-41c6-9f25-c59c155f2d93/click HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element {"using": "xpath", "value": "//table[@id='ejertabla']/tbody"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "POST /session/2d4622d949cf4dd4ccc43a3c98520268/element HTTP/1.1" 200 88
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] selenium.webdriver.remote.remote_connection: GET http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268/element/84b9bf39-2a2f-4d07-8451-71c3592e9286/text {"id": "84b9bf39-2a2f-4d07-8451-71c3592e9286"}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "GET /session/2d4622d949cf4dd4ccc43a3c98520268/element/84b9bf39-2a2f-4d07-8451-71c3592e9286/text HTTP/1.1" 200 38
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: 0 exercises to download
+[INFO] root: Exercises correctly downloaded
+[DEBUG] selenium.webdriver.remote.remote_connection: DELETE http://127.0.0.1:51517/session/2d4622d949cf4dd4ccc43a3c98520268 {}
+[DEBUG] urllib3.connectionpool: http://127.0.0.1:51517 "DELETE /session/2d4622d949cf4dd4ccc43a3c98520268 HTTP/1.1" 200 14
+[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[INFO] root: Correcting exercises...
+
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2407642_0_Ejercicio_24_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2407905_0_Ejercicio_10_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2407905_0_Ejercicio_19_2_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2407905_0_Ejercicio_25_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2407905_0_Ejercicio_26_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2409623_0_Ejercicio_11_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2409623_0_Ejercicio_16_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2409855_0_Ejercicio_27_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2409855_0_Ejercicio_29_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2410016_0_Ejercicio_17_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2410016_0_Ejercicio_28_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2410085_0_Ejercicio_14_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2410158_0_Ejercicio_18_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2411199_0_Ejercicio_6_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2411989_0_Ejercicio_2_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_15_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_1_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_20_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_21_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_22_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_23_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_3_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_4_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\solutions\Curso_1011311_Alumno_2413751_0_Ejercicio_5_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
+[INFO] root: Grade: 0.0
+[INFO] root: Inserting solutions in db...
+[DEBUG] root: INSERT INTO public.solutions(num_questions, exercise, solutions_list) VALUES (15, 3, '{"1": ["a"], "2": ["c"], "3": ["c"], "4": ["d"], "5": ["a"], "6": ["b"], "7": ["d"], "8": ["d"], "9": ["a"], "10": ["c"], "11": ["a"], "12": ["c"], "13": ["a"], "14": ["b"], "15": ["a"]}') ON CONFLICT (exercise) DO NOTHING 
+[DEBUG] root: INSERT INTO public.solutions(num_questions, exercise, solutions_list) VALUES (10, 5, '{"1": ["a"], "2": ["c"], "3": ["c"], "4": ["b"], "5": ["a"], "6": ["c"], "7": ["b"], "8": ["b"], "9": ["c"], "10": ["c"]}') ON CONFLICT (exercise) DO NOTHING 
+[INFO] root: Inserted solutions succesfully

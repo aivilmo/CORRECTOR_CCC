@@ -9,6 +9,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from definitions import BASE_FOLDER
+from configuration.app_config import AppConfig
+from configuration.ccc_config import CCCConfiguration
+from configuration.path_config import PathConfiguration
 from configuration.logger import Logger
 from utils.dict_converter import DictConverter
 import json
@@ -33,6 +36,9 @@ class WebScrapper:
     URL = "http://www.cursosadistanciayonline.com/index.php"
 
     def __init__(self):
+        AppConfig.getInstance().init_app_config()
+        self.config_ccc = CCCConfiguration.getInstance().ccc_config
+        self.config_path = PathConfiguration.getInstance().routes
         self.logger = Logger.getInstance()
         self.json_dict = self.get_selectors()
         self.dict_converter = DictConverter(self.json_dict)
@@ -47,11 +53,11 @@ class WebScrapper:
     def login(self):
         username = self.DRIVER.find_element_by_id(self.selectors.id.name)
         username.clear()
-        username.send_keys("Aitana")
+        username.send_keys(self.config_ccc.username)
 
         password = self.DRIVER.find_element_by_name(self.selectors.input.password)
         password.clear()
-        password.send_keys("410")
+        password.send_keys(self.config_ccc.password)
 
         self.DRIVER.find_element_by_name(self.selectors.input.login_btn).click()
         self.DRIVER.find_element_by_xpath(self.selectors.xpath.link_ccc).click()
@@ -86,7 +92,7 @@ class WebScrapper:
             self.explorer_wait(path)
             self.DRIVER.find_element_by_xpath(path).click()
         except NoSuchElementException:
-            self.logger.error("No more exercises to correct")
+            self.logger.error("There are no more exercises to correct")
             return False
         return True
 
@@ -121,13 +127,13 @@ class WebScrapper:
             self.click_open_excercises(exercise)
             self.click_download()
             self.click_exercises_tab()
-        self.logger.info("Exercises download correctly")
+        self.logger.info("Exercises correctly downloaded")
         self.close_explorer()
 
     def close_explorer(self):
         self.DRIVER.quit()
 
     def get_selectors(self):
-        with open("data/selectors.json") as json_file:
+        with open(self.config_path.json.selector) as json_file:
             data = json.load(json_file)
         return data

@@ -9,6 +9,7 @@ class AppConfig:
     FILE_URL = "data/env_config/app.yaml"
 
     __instance = None
+    yaml_dict = None
 
     @staticmethod
     def getInstance():
@@ -22,7 +23,9 @@ class AppConfig:
         if AppConfig.__instance != None:
             raise Exception("This class is a singleton!")
         else:
-            self.yaml_dict = None
+            self.__database = DatabaseConfiguration.getInstance()
+            self.__path = PathConfiguration.getInstance()
+            self.__ccc = CCCConfiguration.getInstance()
             AppConfig.__instance = self
 
     def read_configuration_file(self):
@@ -35,6 +38,6 @@ class AppConfig:
         self.init_configurations(self.yaml_dict)
 
     def init_configurations(self, yaml_dict):
-        DatabaseConfiguration.getInstance().setConfiguration(yaml_dict["database"])
-        CCCConfiguration.getInstance().setConfiguration(yaml_dict["ccc"])
-        PathConfiguration.getInstance().setConfiguration(yaml_dict["path"])
+        self.__database.setConfiguration(yaml_dict["database"])
+        self.__ccc.setConfiguration(yaml_dict["ccc"])
+        self.__path.getInstance().setConfiguration(yaml_dict["path"])
