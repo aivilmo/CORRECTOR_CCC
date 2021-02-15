@@ -1,4 +1,5 @@
 import logging
+from exception.singleton_exception import SingletonException
 
 
 class Logger:
@@ -15,7 +16,7 @@ class Logger:
     def __init__(self):
         """ Virtually private constructor. """
         if Logger.__instance != None:
-            raise Exception("This class is a singleton!")
+            raise SingletonException
         else:
             logging.basicConfig(
                 level=logging.DEBUG,
