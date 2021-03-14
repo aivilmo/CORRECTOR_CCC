@@ -22,7 +22,7 @@ class WebScrapper:
         + "\\data\\storage\\exercises\\"
     }
     chrome_options.add_experimental_option("prefs", DOWNLOAD_PATH)
-    chrome_options.add_argument("headless")
+    # chrome_options.add_argument("headless")
     DRIVER = webdriver.Chrome(
         executable_path=r"data/driver/chromedriver.exe", chrome_options=chrome_options
     )
@@ -77,6 +77,7 @@ class WebScrapper:
     # Go to the tab "Ejercicios" from the init page
     def click_exercises_tab(self):
         self.DRIVER.find_element_by_class_name("bejercicio").click()
+        self.wait_table_content_be_loaded()
 
     # Wait object before click
     def explorer_wait(self, xpath):
@@ -84,7 +85,6 @@ class WebScrapper:
             self.logger.info("Waiting ...")
             element_present = EC.presence_of_element_located((By.XPATH, xpath))
             WebDriverWait(self.DRIVER, self.TIMEOUT).until(element_present)
-            time.sleep(1)
         except TimeoutException:
             self.logger.error("Timeout object " + xpath)
 
@@ -119,11 +119,21 @@ class WebScrapper:
 
     # Get all exercises in the web
     def num_exercises(self):
+        self.wait_table_content_be_loaded()
         tableRows = self.DRIVER.find_element_by_xpath(
             "//table[@id='ejertabla']/tbody"
         ).text.split("\n")
         numRows = int(len(tableRows) / 2)
+        if self.DRIVER.find_element_by_class_name("dataTables_empty"):
+            self.DRIVER.quit()
+            raise Exception("No exercises to download")
         return numRows
+
+    def wait_table_content_be_loaded():
+        element_present = EC.presence_of_element_located(
+            (By.XPATH, "//table[@id='ejertabla']/tbody")
+        )
+        WebDriverWait(self.DRIVER, self.TIMEOUT).until(element_present)
 
     # Download open (has been downloaded) exercises
     def download_docs(self):
