@@ -3,14 +3,15 @@
 """--------------------"""
 
 from service.bdconnection import DbManager
-from service.webscrapper import WebScrapper
+from rest.filedownloader import FileDownloader
 from service.corrector import CorrectorManager
 from service.dochandler import DocHandler
+
 
 class MainClass:
 
     correctorManager = CorrectorManager()
-    webScrapper = WebScrapper()
+    fileDownloader = FileDownloader()
     dbManager = DbManager()
     docHandler = DocHandler()
 
@@ -18,9 +19,7 @@ class MainClass:
         """----------------------------"""
         """----to correct exercises----"""
         """----------------------------"""
-        self.webScrapper.init_explorer()
-        self.webScrapper.login()
-        self.webScrapper.download_docs()
+        self.fileDownloader.download_exercises()
         self.correctorManager.correct()
         """----------------------------------"""
         """----to pass the solutions to DB----"""
@@ -30,11 +29,15 @@ class MainClass:
         tuples_list = []
         for solution_file in solutions:
             number_of_exercise = self.docHandler.number_exercise(solution_file)
-            response, num_questions = self.correctorManager.extract_solution_docx(solution_file)
-            tuples_list.append((solution_file, number_of_exercise, response, num_questions))
+            response, num_questions = self.correctorManager.extract_solution_docx(
+                solution_file
+            )
+            tuples_list.append(
+                (solution_file, number_of_exercise, response, num_questions)
+            )
         self.dbManager.post_solutions(tuples_list, password="harryna")
+
 
 # Main
 if __name__ == "__main__":
     MainClass().run()
-
