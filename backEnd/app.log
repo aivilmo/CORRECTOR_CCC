@@ -1,61 +1,56 @@
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/timeouts {"implicit": 30000}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/timeouts HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/window/maximize {}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/window/maximize HTTP/1.1" 200 52
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/url {"url": "http://www.cursosadistanciayonline.com/index.php"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/url HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "css selector", "value": "[id=\"name\"]"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/52b53872-44dd-4acd-9833-b03b82141a12/clear {"id": "52b53872-44dd-4acd-9833-b03b82141a12"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element/52b53872-44dd-4acd-9833-b03b82141a12/clear HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/52b53872-44dd-4acd-9833-b03b82141a12/value {"text": "Aitana", "value": ["A", "i", "t", "a", "n", "a"], "id": "52b53872-44dd-4acd-9833-b03b82141a12"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element/52b53872-44dd-4acd-9833-b03b82141a12/value HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "css selector", "value": "[name=\"password\"]"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/26efc25c-6b61-43d4-ad8f-1ad89a7046c4/clear {"id": "26efc25c-6b61-43d4-ad8f-1ad89a7046c4"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element/26efc25c-6b61-43d4-ad8f-1ad89a7046c4/clear HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/26efc25c-6b61-43d4-ad8f-1ad89a7046c4/value {"text": "410", "value": ["4", "1", "0"], "id": "26efc25c-6b61-43d4-ad8f-1ad89a7046c4"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element/26efc25c-6b61-43d4-ad8f-1ad89a7046c4/value HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "css selector", "value": "[name=\"acceder\"]"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/149a2ad9-3800-4cbd-a678-2943ff7e50cc/click {"id": "149a2ad9-3800-4cbd-a678-2943ff7e50cc"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element/149a2ad9-3800-4cbd-a678-2943ff7e50cc/click HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "xpath", "value": "//a[@title='CCC']"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/ba769cb6-cc41-45c0-b862-23f77fb66987/click {"id": "ba769cb6-cc41-45c0-b862-23f77fb66987"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element/ba769cb6-cc41-45c0-b862-23f77fb66987/click HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[INFO] root: Logged correctly
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "css selector", "value": ".bejercicio"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/c699add1-c517-479f-b300-a7b476d8361f/click {"id": "c699add1-c517-479f-b300-a7b476d8361f"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element/c699add1-c517-479f-b300-a7b476d8361f/click HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "xpath", "value": "//table[@id='ejertabla']/tbody"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "xpath", "value": "//table[@id='ejertabla']/tbody"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: GET http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element/803a0c26-58a6-4b03-8bf0-8fa9558ce3b0/text {"id": "803a0c26-58a6-4b03-8bf0-8fa9558ce3b0"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "GET /session/daa2b14b3665ea1d626a5549fcb80345/element/803a0c26-58a6-4b03-8bf0-8fa9558ce3b0/text HTTP/1.1" 200 38
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: POST http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345/element {"using": "css selector", "value": ".dataTables_empty"}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "POST /session/daa2b14b3665ea1d626a5549fcb80345/element HTTP/1.1" 200 88
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
-[DEBUG] selenium.webdriver.remote.remote_connection: DELETE http://127.0.0.1:62107/session/daa2b14b3665ea1d626a5549fcb80345 {}
-[DEBUG] urllib3.connectionpool: http://127.0.0.1:62107 "DELETE /session/daa2b14b3665ea1d626a5549fcb80345 HTTP/1.1" 200 14
-[DEBUG] selenium.webdriver.remote.remote_connection: Finished Request
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET / HTTP/1.1" 200 1462
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /acceso.php HTTP/1.1" 200 694
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionp.php?id=0 HTTP/1.1" 302 13013
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionpn.php HTTP/1.1" 200 5103
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /lista_ejercicios_pendientes1.php?clave=410&empresa=0 HTTP/1.1" 200 1774
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 362
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+[DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2409419_0_Ejercicio_19_2.docx HTTP/1.1" 200 36057
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 364
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+[DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2416098_0_Ejercicio_23_1.doc HTTP/1.1" 200 36352
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 364
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+[DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2409419_0_Ejercicio_12_2.docx HTTP/1.1" 200 35914
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 363
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+[DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2419608_0_Ejercicio_3_1.doc HTTP/1.1" 200 60416
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 364
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+[DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2409419_0_Ejercicio_13_2.docx HTTP/1.1" 200 41413
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 364
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+[DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2409419_0_Ejercicio_8_2.docx HTTP/1.1" 200 38195
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 362
+[DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+[DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2416098_0_Ejercicio_24_1.doc HTTP/1.1" 200 36864
+[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_26_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_26_1.docx...
+[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_27_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_27_1.docx...
+[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_28_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_28_1.docx...
+[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_29_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_29_1.docx...
+[INFO] root: Correcting exercises...
+
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_26_1.docx
+[INFO] root: Grade: 9.05
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_27_1.docx
+[INFO] root: Grade: 9.33
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_28_1.docx
+[INFO] root: Grade: 10.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_29_1.docx
+[INFO] root: Grade: 2.0
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2418264_0_Ejercicio_21_1.docx
+[INFO] root: Grade: 9.33
+[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2418264_0_Ejercicio_22_1.docx
+[INFO] root: Grade: 8.67
+[INFO] root: Inserting solutions in db...
