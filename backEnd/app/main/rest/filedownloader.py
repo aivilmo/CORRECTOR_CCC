@@ -60,12 +60,11 @@ class FileDownloader:
                 "enviar": "Descargar",
             }
 
-            """
-            #This may work when automated file upload exist
+            # This may work when automated file upload exist
             if form.find("input", {"name": "enviar", "class": "submit"}):
                 body["cod_profe"] = "410"
-            elif form.find("input", {"name": "enviar", "class": "boton"}):"""
-            body["segunda"] = "S"
+            elif form.find("input", {"name": "enviar", "class": "boton"}):
+                body["segunda"] = "S"
             self.requestsBodies.append(body)
 
     def _find_input_value(self, form, field):
