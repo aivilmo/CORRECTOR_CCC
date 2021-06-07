@@ -82,7 +82,7 @@ class FileDownloader:
             pattern = "http://campus.cursosccc.com//wordalum/(.*)"
             match = re.search(pattern, link)
             if match:
-                doc_name = "data/storage/" + match.group(1)
+                doc_name = "data/storage/exercises" + match.group(1)
 
             with open(doc_name, "wb") as f:
                 for chunk in docx.iter_content(1024 * 1024 * 2):  # 2 MB chunks
