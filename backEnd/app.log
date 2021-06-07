@@ -4,9 +4,9 @@
 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /acceso.php HTTP/1.1" 200 694
 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionp.php?id=0 HTTP/1.1" 302 13013
-[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionpn.php HTTP/1.1" 200 5103
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionpn.php HTTP/1.1" 200 5094
 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
-[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /lista_ejercicios_pendientes1.php?clave=410&empresa=0 HTTP/1.1" 200 1774
+[DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /lista_ejercicios_pendientes1.php?clave=410&empresa=0 HTTP/1.1" 200 1683
 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 362
 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
@@ -35,22 +35,17 @@
 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 362
 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
 [DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2416098_0_Ejercicio_24_1.doc HTTP/1.1" 200 36864
-[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_26_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_26_1.docx...
-[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_27_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_27_1.docx...
-[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_28_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_28_1.docx...
-[INFO] root: Converting C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_29_1.doc to C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_29_1.docx...
+[INFO] root: Converting C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2416098_0_Ejercicio_23_1.doc to C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2416098_0_Ejercicio_23_1.docx...
+[INFO] root: Converting C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2416098_0_Ejercicio_24_1.doc to C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2416098_0_Ejercicio_24_1.docx...
+[INFO] root: Converting C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2419608_0_Ejercicio_3_1.doc to C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2419608_0_Ejercicio_3_1.docx...
 [INFO] root: Correcting exercises...
 
-[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_26_1.docx
-[INFO] root: Grade: 9.05
-[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_27_1.docx
-[INFO] root: Grade: 9.33
-[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_28_1.docx
+[INFO] root: C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2409419_0_Ejercicio_19_2.docx
 [INFO] root: Grade: 10.0
-[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_29_1.docx
-[INFO] root: Grade: 2.0
-[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2418264_0_Ejercicio_21_1.docx
+[INFO] root: C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2416098_0_Ejercicio_23_1.docx
 [INFO] root: Grade: 9.33
-[INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2418264_0_Ejercicio_22_1.docx
+[INFO] root: C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2416098_0_Ejercicio_24_1.docx
 [INFO] root: Grade: 8.67
+[INFO] root: C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\exercisesCurso_1011311_Alumno_2419608_0_Ejercicio_3_1.docx
+[INFO] root: Grade: 5.33
 [INFO] root: Inserting solutions in db...
