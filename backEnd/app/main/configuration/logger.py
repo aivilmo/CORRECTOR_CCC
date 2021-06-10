@@ -1,31 +1,25 @@
 import logging
-from exception.singleton_exception import SingletonException
 
 
 class Logger:
 
     __instance = None
-
-    @staticmethod
-    def getInstance():
-        """ Static access method. """
-        if Logger.__instance == None:
-            Logger()
-        return Logger.__instance
+    nombre = None
 
     def __init__(self):
-        """ Virtually private constructor. """
-        if Logger.__instance != None:
-            raise SingletonException
-        else:
-            logging.basicConfig(
-                level=logging.DEBUG,
-                filename="data/logger/app.log",
-                filemode="w",
-                format="[%(levelname)s] %(name)s: %(message)s",
-            )
-            self.logger = logging.getLogger()
-            Logger.__instance = self
+        logging.basicConfig(
+            level=logging.DEBUG,
+            filename="app.log",
+            filemode="w",
+            format="[%(levelname)s] %(name)s: %(message)s",
+        )
+        self.logger = logging.getLogger()
+
+    # Singleton method
+    def __new__(cls):
+        if Logger.__instance is None:
+            Logger.__instance = object.__new__(cls)
+        return Logger.__instance
 
     def debug(self, message):
         print("[DEBUG]: " + message)

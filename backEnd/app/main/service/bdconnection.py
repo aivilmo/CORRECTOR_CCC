@@ -4,23 +4,16 @@
 
 import psycopg2
 import json
-from configuration.app_config import AppConfig
-from configuration.database_config import DatabaseConfiguration
 from configuration.logger import Logger
 
 
 class DbManager:
-    @AppConfig.load_configuration
     def __init__(self):
-        self.config = DatabaseConfiguration.getInstance().db_config
-        self.logger = Logger.getInstance()
+        self.logger = Logger()
 
-    def connect_db(self):
+    def connect_db(self, password):
         connection = psycopg2.connect(
-            host=self.config.host,
-            database=self.config.name,
-            user=self.config.user,
-            password=self.config.password,
+            host="localhost", database="CCC", user="aitana", password=password
         )
         connection.autocommit = True
         return connection
@@ -29,17 +22,19 @@ class DbManager:
         connection.close()
 
     # Get solutions from the db for a excercise id
-    def get_solutions(self, exercise_id):
-        connection = self.connect_db()
+    def get_solutions(self, exercise_id, password="harryna"):
+        connection = self.connect_db(password)
         query = connection.cursor()
-        query.execute("SELECT solutions_list FROM solutions WHERE exercise=" + str(exercise_id))
+        query.execute(
+            "SELECT solutions_list FROM solutions WHERE exercise=" + str(exercise_id)
+        )
         solution = query.fetchall()
         self.disconnect_db(connection)
         return solution
 
     # Write the solutions in db
-    def post_solutions(self, exercise_data_tuple_list):
-        connection = self.connect_db()
+    def post_solutions(self, exercise_data_tuple_list, password):
+        connection = self.connect_db(password)
         self.logger.info("Inserting solutions in db...")
         query = connection.cursor()
         filename_list = []
@@ -50,7 +45,7 @@ class DbManager:
             sql = "INSERT INTO public.solutions(num_questions, exercise, solutions_list) VALUES {} ON CONFLICT (exercise) DO NOTHING ".format(
                 args
             )
-            self.logger.debug(sql)
+            # print(sql)
             query.execute(sql)
-        self.logger.info("Inserted solutions succesfully")
+        print("Inserted solutions succesfully")
         self.disconnect_db(connection)
