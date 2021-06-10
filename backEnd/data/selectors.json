@@ -1,0 +1,18 @@
+{
+    "id": {
+        "name": "name"
+    },
+    "input": {
+        "password": "password",
+        "login_btn": "acceder"
+    },
+    "classes": {
+        "exercise_tab": "bejercicio"
+    },
+    "xpath": {
+        "link_ccc": "//a[@title='CCC']",
+        "link_ccc_courses": ".//a[contains(@href,'cursosccc')]",
+        "link": "/html/body/p[3]/a",
+        "exercise_table": "//table[@id='ejertabla']/tbody"
+    }
+}
