@@ -11,7 +11,7 @@ class Logger:
             level=logging.DEBUG,
             filename="app.log",
             filemode="w",
-            format="[%(levelname)s] %(name)s: %(message)s",
+            format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
         )
         self.logger = logging.getLogger()
 
