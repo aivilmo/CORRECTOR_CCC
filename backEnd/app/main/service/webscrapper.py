@@ -31,8 +31,6 @@ class WebScrapper:
     URL = "http://www.cursosadistanciayonline.com/index.php"
 
     def __init__(self):
-<<<<<<< HEAD
-<<<<<<< HEAD
         self.config_ccc = CCCConfiguration.getInstance().ccc_config
         self.config_path = PathConfiguration.getInstance().routes
         self.logger = Logger.getInstance()
@@ -51,12 +49,7 @@ class WebScrapper:
             executable_path=self.config_path.chrome_driver, chrome_options=self.chrome_options
         )
         self.TIMEOUT = 3
-=======
         self.logger = Logger()
->>>>>>> parent of 347c85a (Merge pull request #6 from aivilmo/file_conf)
-=======
-        self.logger = Logger()
->>>>>>> parent of 347c85a (Merge pull request #6 from aivilmo/file_conf)
 
     # Open the explorer Chrome
     def init_explorer(self):
