@@ -33,6 +33,7 @@ class DocHandler:
             wb = Word.Documents.Open(in_file)
             out_file = os.path.abspath(in_file[:-4] + "." + EXTENSION_LIST[1])
             self.logger.info("Converting " + in_file + " to " + out_file + "...")
+            print(out_file)
             wb.SaveAs2(out_file, FileFormat=16)  # file format for docx
             wb.Close()
             os.remove(in_file)

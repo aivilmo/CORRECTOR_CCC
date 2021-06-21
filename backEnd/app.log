@@ -1,29 +1,23 @@
-2021-06-09 23:35:38,642 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
-2021-06-09 23:35:38,847 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET / HTTP/1.1" 200 1462
-2021-06-09 23:35:38,850 [INFO] root: Sessions and cookies were obtained
-2021-06-09 23:35:38,850 [INFO] root: Signing in to CCC...
-2021-06-09 23:35:38,854 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
-2021-06-09 23:35:38,921 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /acceso.php HTTP/1.1" 200 694
-2021-06-09 23:35:38,928 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
-2021-06-09 23:35:39,198 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionp.php?id=0 HTTP/1.1" 302 13013
-2021-06-09 23:35:41,656 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionpn.php HTTP/1.1" 200 5094
-2021-06-09 23:35:41,658 [INFO] root: Sign in to CCC correct
-2021-06-09 23:35:41,662 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
-2021-06-09 23:35:44,795 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /lista_ejercicios_pendientes1.php?clave=410&empresa=0 HTTP/1.1" 200 1396
-2021-06-09 23:35:44,823 [INFO] root: Found exercises to download
-2021-06-09 23:35:44,826 [INFO] root: Downloading exercise...
-2021-06-09 23:35:44,830 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
-2021-06-09 23:35:44,981 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 364
-2021-06-09 23:35:44,987 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
-2021-06-09 23:35:45,058 [DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2418086_0_Ejercicio_18_1.doc HTTP/1.1" 200 63488
-2021-06-09 23:35:45,109 [INFO] root: Exercise downloaded: Curso_1011311_Alumno_2418086_0_Ejercicio_18_1.doc
-2021-06-09 23:35:45,940 [INFO] root: Downloading exercise...
-2021-06-09 23:35:45,967 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
-2021-06-09 23:35:46,124 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 364
-2021-06-09 23:35:46,130 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
-2021-06-09 23:35:46,196 [DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2409419_0_Ejercicio_20_1.docx HTTP/1.1" 200 36360
-2021-06-09 23:35:46,315 [INFO] root: Exercise downloaded: Curso_1011311_Alumno_2409419_0_Ejercicio_20_1.docx
-2021-06-09 23:35:52,075 [INFO] root: Correcting exercises...
+2021-06-21 16:07:43,826 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+2021-06-21 16:07:43,953 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET / HTTP/1.1" 200 1462
+2021-06-21 16:07:43,954 [INFO] root: Sessions and cookies were obtained
+2021-06-21 16:07:43,954 [INFO] root: Signing in to CCC...
+2021-06-21 16:07:43,956 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+2021-06-21 16:07:44,013 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /acceso.php HTTP/1.1" 200 694
+2021-06-21 16:07:44,018 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+2021-06-21 16:07:44,185 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionp.php?id=0 HTTP/1.1" 302 13013
+2021-06-21 16:07:46,734 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /gestionpn.php HTTP/1.1" 200 5094
+2021-06-21 16:07:46,736 [INFO] root: Sign in to CCC correct
+2021-06-21 16:07:46,741 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+2021-06-21 16:07:49,296 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "GET /lista_ejercicios_pendientes1.php?clave=410&empresa=0 HTTP/1.1" 200 1320
+2021-06-21 16:07:49,314 [INFO] root: Found exercises to download
+2021-06-21 16:07:49,316 [INFO] root: Downloading exercise...
+2021-06-21 16:07:49,321 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): www.cursosadistanciayonline.com:80
+2021-06-21 16:07:49,473 [DEBUG] urllib3.connectionpool: http://www.cursosadistanciayonline.com:80 "POST /predescargar_ejercicio_seleccionado1.php HTTP/1.1" 200 364
+2021-06-21 16:07:49,484 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): campus.cursosccc.com:80
+2021-06-21 16:07:49,527 [DEBUG] urllib3.connectionpool: http://campus.cursosccc.com:80 "GET //wordalum/Curso_1011311_Alumno_2409986_0_Ejercicio_12_1.doc HTTP/1.1" 200 86528
+2021-06-21 16:07:49,570 [INFO] root: Exercise downloaded: Curso_1011311_Alumno_2409986_0_Ejercicio_12_1.doc
+2021-06-21 16:07:52,109 [INFO] root: Converting C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2409986_0_Ejercicio_12_1.doc to C:\Users\User\Desktop\CEA\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2409986_0_Ejercicio_12_1.docx...
+2021-06-21 16:07:53,249 [INFO] root: Correcting exercises...
 
-2021-06-09 23:35:52,775 [INFO] root: C:\Users\hp\Desktop\CORRECTOR_CCC\backEnd\data\storage\exercises\Curso_1011311_Alumno_2405484_0_Ejercicio_26_1_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO_CORREGIDO.docx
-2021-06-09 23:35:52,863 [INFO] root: Grade: 0.0
+2021-06-21 16:07:56,853 [INFO] root: Inserting solutions in db...
