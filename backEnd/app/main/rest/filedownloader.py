@@ -2,18 +2,20 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from configuration.logger import Logger
+from configuration.app_config import AppConfig
+from configuration.ccc_config import CCCConfiguration
 
 
 class FileDownloader:
 
-    BASE_URL = "http://www.cursosadistanciayonline.com/"
+    # Instanciate the config
+    AppConfig.getInstance().init_app_config()
 
+    BASE_URL = "http://www.cursosadistanciayonline.com/"
     # login
     LOGIN = "acceso.php"
     # This site preprocess all other PHP calls
     GESTION = "gestionp.php?id=0"
-    # The exercise table
-    EXERCISE_TABLE = "lista_ejercicios_pendientes1.php?clave=410&empresa=0"
     # Site to download specific exercise
     DOWNLOAD_PAGE = "predescargar_ejercicio_seleccionado1.php"
 
@@ -21,6 +23,9 @@ class FileDownloader:
         self.logger = Logger()
         self.req_cookies = []
         self.requestsBodies = []
+        self.ccc = CCCConfiguration.getInstance().config()
+        # The exercise table
+        self.EXERCISE_TABLE = "lista_ejercicios_pendientes1.php?clave=" + str(self.ccc.password) + "&empresa=0"
 
     def _get_session_tokens(self):
         index = requests.get(self.BASE_URL)
@@ -35,11 +40,11 @@ class FileDownloader:
         requests.post(
             self.BASE_URL + self.LOGIN,
             headers={
-                "Origin": "http://www.cursosadistanciayonline.com",
-                "Referer": "http://www.cursosadistanciayonline.com/index.php",
+                "Origin": self.BASE_URL,
+                "Referer": self.BASE_URL + "index.php",
             },
             cookies=self.req_cookies,
-            data={"usuario": "Aitana", "password": "410", "acceder": "Acceder"},
+            data={"usuario": self.ccc.username, "password": self.ccc.password, "acceder": "Acceder"},
         )
 
         preformat = self._preformat_php()
@@ -65,6 +70,7 @@ class FileDownloader:
             self.logger.info("Found exercises to download")
         else:
             self.logger.info("There are no exercises to download")
+            return False
 
         self.requestsBodies = []
         for i in range(1, len(rows)):
@@ -81,15 +87,17 @@ class FileDownloader:
 
             # This may work when automated file upload exist
             if form.find("input", {"name": "enviar", "class": "submit"}):
-                body["cod_profe"] = "410"
+                body["cod_profe"] = self.ccc.password
             elif form.find("input", {"name": "enviar", "class": "boton"}):
                 body["segunda"] = "S"
             self.requestsBodies.append(body)
+            return True
 
     def _find_input_value(self, form, field):
         return form.find("input", {"name": field})["value"]
 
     def _download_exercises_from_ccc(self):
+        self.logger.info("Downloading exercises...")
         for body in self.requestsBodies:
             self.logger.info("Downloading exercise...")
             downloadResp = requests.post(
@@ -113,5 +121,7 @@ class FileDownloader:
     def download_exercises(self):
         self._get_session_tokens()
         self._login()
-        self._get_exercises()
-        self._download_exercises_from_ccc()
+        if self._get_exercises():
+            self._download_exercises_from_ccc()
+            return True
+        return False

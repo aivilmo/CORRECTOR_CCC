@@ -19,8 +19,8 @@ class MainClass:
         """----------------------------"""
         """----to correct exercises----"""
         """----------------------------"""
-        self.fileDownloader.download_exercises()
-        self.correctorManager.correct()
+        if self.fileDownloader.download_exercises():
+            self.correctorManager.correct()
         """----------------------------------"""
         """----to pass the solutions to DB----"""
         """----------------------------------"""
@@ -36,9 +36,8 @@ class MainClass:
             tuples_list.append(
                 (solution_file, number_of_exercise, response, num_questions)
             )
-        self.dbManager.post_solutions(tuples_list, password="harryna")
+        self.dbManager.post_solutions(tuples_list)
         """
-
 
 # Main
 if __name__ == "__main__":

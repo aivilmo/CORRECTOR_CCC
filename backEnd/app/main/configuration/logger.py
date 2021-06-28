@@ -9,7 +9,7 @@ class Logger:
     def __init__(self):
         logging.basicConfig(
             level=logging.DEBUG,
-            filename="app.log",
+            filename="data/logger/app.log",
             filemode="w",
             format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
         )

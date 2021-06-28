@@ -8,16 +8,22 @@ import glob
 import os
 from definitions import BASE_FOLDER, EXTENSION_LIST, IGNORED_EXERCISES
 from configuration.logger import Logger
+from configuration.app_config import AppConfig
+from configuration.path_config import PathConfiguration
 
 
 class DocHandler:
 
-    PATH_EXERCISES = str(BASE_FOLDER.absolute()) + "\\data\\storage\\exercises\\*."
-    PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + "\\data\\storage\\solutions\\*."
+    # Instanciate the config
+    AppConfig.getInstance().init_app_config()
 
     def __init__(self):
         self.logger = Logger()
+        self.path = PathConfiguration.getInstance().config()
+        self.PATH_EXERCISES = str(BASE_FOLDER.absolute()) + self.path.docx.exercises + "*."
+        self.PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + self.path.docx.solutions + "*."
 
+    
     def number_exercise(self, file_name):
         return int(file_name.split("_Ejercicio_")[1].split("_")[0])
 
