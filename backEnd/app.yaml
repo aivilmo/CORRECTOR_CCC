@@ -1,0 +1,13 @@
+ccc:
+  url: "http://www.cursosadistanciayonline.com/index.php"
+  username: Aitana
+  password: 410
+path:
+  docx:
+    exercises: "\\data\\storage\\exercises\\"
+    solutions: "\\data\\storage\\solutions\\"
+database:
+  host: localhost
+  name: CCC
+  user: aitana
+  password: harryna

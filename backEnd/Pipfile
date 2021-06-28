@@ -12,6 +12,8 @@ pywin32 = "*"
 psycopg2 = "*"
 flask = "*"
 docx = "*"
+pyyaml = "*"
+pdbpp = "*"
 
 [dev-packages]
 pylint = "*"
