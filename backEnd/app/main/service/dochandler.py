@@ -8,16 +8,18 @@ import glob
 import os
 from definitions import BASE_FOLDER, EXTENSION_LIST, IGNORED_EXERCISES
 from configuration.logger import Logger
+from configuration.app_config_v2 import AppConfig
 
 
 class DocHandler:
 
-    PATH_EXERCISES = str(BASE_FOLDER.absolute()) + "\\data\\storage\\exercises\\*."
-    PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + "\\data\\storage\\solutions\\*."
-
     def __init__(self):
         self.logger = Logger()
+        self.app_config = AppConfig()
+        self.PATH_EXERCISES = str(BASE_FOLDER.absolute()) + self.app_config.path_docx_exercises() + "*."
+        self.PATH_SOLUTIONS = str(BASE_FOLDER.absolute()) + self.app_config.path_docx_solutions() + "*."
 
+    
     def number_exercise(self, file_name):
         return int(file_name.split("_Ejercicio_")[1].split("_")[0])
 
@@ -28,7 +30,7 @@ class DocHandler:
         path = self.PATH_EXERCISES
         if is_solution:
             path = self.PATH_SOLUTIONS
-        for i, doc in enumerate(glob.iglob(path + EXTENSION_LIST[0])):
+        for _, doc in enumerate(glob.iglob(path + EXTENSION_LIST[0])):
             in_file = os.path.abspath(doc)
             wb = Word.Documents.Open(in_file)
             out_file = os.path.abspath(in_file[:-4] + "." + EXTENSION_LIST[1])
