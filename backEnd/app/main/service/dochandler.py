@@ -23,18 +23,21 @@ class DocHandler:
 
     # Convert doc to docx
     def doc2docx(self, is_solution=False):
+        self.logger.info("Converting doc documents to docx...")
         Word = win32com.client.Dispatch("Word.Application")
         Word.visible = 0
         path = self.PATH_EXERCISES
         if is_solution:
             path = self.PATH_SOLUTIONS
-        for i, doc in enumerate(glob.iglob(path + EXTENSION_LIST[0])):
+        for _, doc in enumerate(glob.iglob(path + EXTENSION_LIST[0])):
             in_file = os.path.abspath(doc)
             wb = Word.Documents.Open(in_file)
             out_file = os.path.abspath(in_file[:-4] + "." + EXTENSION_LIST[1])
             self.logger.info("Converting " + in_file + " to " + out_file + "...")
-            print(out_file)
-            wb.SaveAs2(out_file, FileFormat=16)  # file format for docx
+            try:
+                wb.SaveAs2(out_file, FileFormat=16)  # file format for docx
+            except Exception:
+                self.logger.error("Error converting " + in_file + " to " + out_file + "\n" + Exception)
             wb.Close()
             os.remove(in_file)
         Word.Quit()

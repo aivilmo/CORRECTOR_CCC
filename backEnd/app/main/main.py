@@ -24,6 +24,7 @@ class MainClass:
         """----------------------------------"""
         """----to pass the solutions to DB----"""
         """----------------------------------"""
+        """
         self.docHandler.doc2docx(True)
         solutions = self.docHandler.read_files(True)
         tuples_list = []
@@ -36,6 +37,7 @@ class MainClass:
                 (solution_file, number_of_exercise, response, num_questions)
             )
         self.dbManager.post_solutions(tuples_list, password="harryna")
+        """
 
 
 # Main
