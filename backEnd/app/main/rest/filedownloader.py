@@ -2,10 +2,14 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from configuration.logger import Logger
-from configuration.app_config_v2 import AppConfig
+from configuration.app_config import AppConfig
+from configuration.ccc_config import CCCConfiguration
 
 
 class FileDownloader:
+
+    # Instanciate the config
+    AppConfig.getInstance().init_app_config()
 
     BASE_URL = "http://www.cursosadistanciayonline.com/"
     # login
@@ -19,9 +23,9 @@ class FileDownloader:
         self.logger = Logger()
         self.req_cookies = []
         self.requestsBodies = []
-        self.app_config = AppConfig()
+        self.ccc = CCCConfiguration.getInstance().config()
         # The exercise table
-        self.EXERCISE_TABLE = "lista_ejercicios_pendientes1.php?clave=" + str(self.app_config.ccc_password()) + "&empresa=0"
+        self.EXERCISE_TABLE = "lista_ejercicios_pendientes1.php?clave=" + str(self.ccc.password) + "&empresa=0"
 
     def _get_session_tokens(self):
         index = requests.get(self.BASE_URL)
@@ -40,7 +44,7 @@ class FileDownloader:
                 "Referer": self.BASE_URL + "index.php",
             },
             cookies=self.req_cookies,
-            data={"usuario": self.app_config.ccc_username(), "password": self.app_config.ccc_password(), "acceder": "Acceder"},
+            data={"usuario": self.ccc.username, "password": self.ccc.password, "acceder": "Acceder"},
         )
 
         preformat = self._preformat_php()
@@ -83,7 +87,7 @@ class FileDownloader:
 
             # This may work when automated file upload exist
             if form.find("input", {"name": "enviar", "class": "submit"}):
-                body["cod_profe"] = self.app_config.ccc_password()
+                body["cod_profe"] = self.ccc.password
             elif form.find("input", {"name": "enviar", "class": "boton"}):
                 body["segunda"] = "S"
             self.requestsBodies.append(body)

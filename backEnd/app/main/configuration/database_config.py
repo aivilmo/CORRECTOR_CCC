@@ -26,3 +26,6 @@ class DatabaseConfiguration:
     def setConfiguration(self, yaml_dict):
         self.dict_converter = DictConverter(yaml_dict)
         self.db_config = self.dict_converter.convert(yaml_dict)
+
+    def config(self):
+        return self.db_config

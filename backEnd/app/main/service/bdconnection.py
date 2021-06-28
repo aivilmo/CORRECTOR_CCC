@@ -5,18 +5,23 @@
 import psycopg2
 import json
 from configuration.logger import Logger
-from configuration.app_config_v2 import AppConfig
+from configuration.app_config import AppConfig
+from configuration.database_config import DatabaseConfiguration
 
 
 class DbManager:
+
+    # Instanciate the config
+    AppConfig.getInstance().init_app_config()
+
     def __init__(self):
         self.logger = Logger()
-        self.app_config = AppConfig()
+        self.database = DatabaseConfiguration.getInstance().config()
 
     def connect_db(self):
         self.logger.info("Connecting bd...")
         connection = psycopg2.connect(
-            host=self.app_config.database_host(), database=self.app_config.database_name(), user=self.app_config.database_user(), password=self.app_config.database_password()
+            host=self.database.host, database=self.database.name, user=self.database.user, password=self.database.password
         )
         connection.autocommit = True
         self.logger.info("Connected to bd succesfully")

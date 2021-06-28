@@ -25,3 +25,6 @@ class CCCConfiguration:
     def setConfiguration(self, yaml_dict):
         self.dict_converter = DictConverter(yaml_dict)
         self.ccc_config = self.dict_converter.convert(yaml_dict)
+
+    def config(self):
+        return self.ccc_config
